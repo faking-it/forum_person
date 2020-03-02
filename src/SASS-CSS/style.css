@@ -1,0 +1,15 @@
+/* Barre de navigation à droite */
+
+.navbar {
+    justify-content: end;
+}
+
+/* Footer fixe en bas à gauche */
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
