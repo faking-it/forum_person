@@ -6,4 +6,6 @@ $sql = "SELECT * FROM topics ORDER BY date_crea DESC";
     $sth->execute();
 
     $topics = $sth->fetchAll(PDO::FETCH_OBJ);
+
+    
     

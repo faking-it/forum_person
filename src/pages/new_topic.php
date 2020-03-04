@@ -1,4 +1,6 @@
-
+<?php
+define("PATH", "./");
+?>
 <head>
 
     <title>Créer un sujet</title>
@@ -6,7 +8,7 @@
     
 </head>
 
-<?php include "./header.php";?>
+<?php include PATH."header.php";?>
     <div class="conteneur">
 
         <form>
@@ -43,7 +45,7 @@
 
     </div>
 
-<?php include "./footer.php";
+<?php include PATH."footer.php";
 
 
 

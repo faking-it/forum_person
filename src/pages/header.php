@@ -6,7 +6,7 @@
     <title>Page d'accueil</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type='text/css'href="../SASS/CSS/style.css">
+    <link rel="stylesheet" type='text/css'href="../sass/css/style.css">
 </head>
 <body>
 
@@ -16,16 +16,16 @@
     <a class="nav-link active" href="#">Avatar</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Profil</a>
+    <a class="nav-link" href="<?php echo PATH; ?>">Profil</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Déconnexion</a>
+    <a class="nav-link" href="<?php echo PATH; ?>deconnexion.php">Déconnexion</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Inscription</a>
+    <a class="nav-link" href="<?php echo PATH; ?>inscription.php">Inscription</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Se connecter</a>
+    <a class="nav-link" href="<?php echo PATH; ?>connexion.php">Se connecter</a>
   </li>
 </ul>
 </nav>

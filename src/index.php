@@ -1,5 +1,9 @@
-<?php include ("./pages/header.php");
+<?php 
 
-include "./pages/home.php";
+define("PATH", "./");
 
-include ("./pages/footer.php");
+include PATH."pages/header.php";
+
+include  PATH."pages/home.php";
+
+include  PATH."pages/footer.php";
