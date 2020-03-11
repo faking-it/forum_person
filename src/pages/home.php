@@ -34,14 +34,16 @@
     <div class="list-group">
     <ul class="ul_topic">
 
-
+<!-- C'est ici qu'on va rechercher les données dans la sélection exécutée dans topics_home.php -->
    <?php require "home_avatar_script.php";?>
         <?php foreach ($topics as $topic)  {?>
         
-        <li class="id_topic">
+        <li class="id_topic"><?php echo $topic->board_name?>">
         <a href="topic.php?id=<?php $topic->id_user ?>" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
-                <div>               
+                <div>      
+                <div class="board"><?php echo $topic->board_name?></div>
+                <div>         
                 <!-- ajout de l'image gravatar des utilisateurs grâce à leur e-mail -->
                 <?php 
                 $avatar = trim($mail_Post[$parcour]);
