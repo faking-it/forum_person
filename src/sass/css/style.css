@@ -34,6 +34,11 @@
     opacity: 100%;
 }
 
+.btn-toolbar {
+    align-self: center;
+    margin-bottom: 5%;
+}
+
 .new_topic_button {
     text-align: center;
 }
