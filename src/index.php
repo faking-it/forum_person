@@ -55,11 +55,7 @@ require PATH."header.php";
        </li>
        <?php } ?>
    </ul>
-   <?php if (isset($_SESSION['id'])){echo "<a class='new_topic_button' href='./pages/new_topic.php'>
-       <button type='button' class='btn btn-primary'>Créer un sujet</button>
-   </a>";}else{echo "";} ?>
-   
-
+  
     <!-- Pagination -->
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <?php $nbr_pages=$nbr_lignes/5;for ($i=0;$i<$nbr_pages;$i++){?>
