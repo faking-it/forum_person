@@ -34,7 +34,7 @@ foreach ($boards as $board)  {?>
 
     // Afficher les 5 topics suivants
     let pages=document.getElementsByClassName("btn-secondary");
-    let array = Array.from(pages)
+    let array = Array.from(pages);
 
     array.forEach(element =>{
         
@@ -83,11 +83,34 @@ foreach ($boards as $board)  {?>
         // Pagination
 
             // Effacer les numéros de page
-            for (i=0;i< <?php echo ($nbr_lignes/5);?>;i++){
-                document.getElementsByClassName("btn-secondary")[i].style.display = "none";
+            let pages2=document.getElementsByClassName("btn-group");
+
+            while (document.getElementsByClassName("btn-toolbar")[0].firstChild){
+                document.getElementsByClassName("btn-toolbar")[0].removeChild(document.getElementsByClassName("btn-toolbar")[0].lastChild);
             }
-            // Afficher les numéros de page de la catégorie sélectionnée
-            array.forEach(element =>{
+
+            // Afficher les numéros de page
+            c = cpt_<?php echo $tab_cptr[$nom_cptr]?>/3;
+
+            for (i=0;i<c;i++){
+                document.getElementsByClassName("btn-toolbar")[0].appendChild(document.createElement('div'));
+                document.getElementsByClassName("btn-toolbar")[0].lastChild.setAttribute("class","btn-group mr-2");
+                document.getElementsByClassName("btn-toolbar")[0].lastChild.setAttribute("role","group");
+                document.getElementsByClassName("btn-toolbar")[0].lastChild.setAttribute("aria-label","First group");
+
+                document.getElementsByClassName("btn-group mr-2")[i].appendChild(document.createElement('button'));
+                document.getElementsByClassName("btn-group mr-2")[i].lastChild.setAttribute("type","button");
+                document.getElementsByClassName("btn-group mr-2")[i].lastChild.setAttribute("class","btn btn-secondary "+i);
+                document.getElementsByClassName("btn-group mr-2")[i].lastChild.innerHTML = ++i,
+                i--;
+                
+            }
+
+            // Afficher les articles de la page de la catégorie sélectionnée
+            let array2 = Array.from(document.getElementsByClassName("btn-secondary"));
+
+
+            array2.forEach(element =>{
         
                 element.addEventListener('click',()=>{
 
@@ -113,13 +136,6 @@ foreach ($boards as $board)  {?>
             }
             );
 
-            // Afficher les numéros de page
-            // Il faut supprimer/créer des pages plutôt que de les cacher/afficher !!!
-            c = cpt_<?php echo $tab_cptr[$nom_cptr]?>/3;
-            for (i=0;i<c;i++){
-                document.getElementsByClassName("btn-secondary")[i].style.display = "block";
-            }
-
         // Changer l'emplacement du contour bleu en fonction de l'onglet sélectionné
         for(l=5;l<=9;l++){
         document.getElementsByClassName("nav-link")[l].className="nav-link";
@@ -138,6 +154,28 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
             for (j=0;j<cpt_<?php echo $tab_cptr[$i]?>;j++){
                 document.getElementsByClassName("id_topic <?php echo $board->board_name?>")[j].style.display = "none";}
         <?php $i++; } ?>
+
+    // Effacer les numéros de page
+            let pages2=document.getElementsByClassName("btn-group");
+
+            while (document.getElementsByClassName("btn-toolbar")[0].firstChild){
+                document.getElementsByClassName("btn-toolbar")[0].removeChild(document.getElementsByClassName("btn-toolbar")[0].lastChild);
+            }
+            
+    // Afficher les numéros de page
+    for (i=0;i< <?php echo ($nbr_lignes/5);?>;i++){
+        document.getElementsByClassName("btn-toolbar")[0].appendChild(document.createElement('div'));
+        document.getElementsByClassName("btn-toolbar")[0].lastChild.setAttribute("class","btn-group mr-2");
+        document.getElementsByClassName("btn-toolbar")[0].lastChild.setAttribute("role","group");
+        document.getElementsByClassName("btn-toolbar")[0].lastChild.setAttribute("aria-label","First group");
+
+        document.getElementsByClassName("btn-group mr-2")[i].appendChild(document.createElement('button'));
+        document.getElementsByClassName("btn-group mr-2")[i].lastChild.setAttribute("type","button");
+        document.getElementsByClassName("btn-group mr-2")[i].lastChild.setAttribute("class","btn btn-secondary "+i);
+        document.getElementsByClassName("btn-group mr-2")[i].lastChild.innerHTML = ++i,
+        i--;
+    }
+    
     // Afficher MAX 5 topics.
     if (<?php echo ($nbr_lignes);?> < 5){
         for (i=0;i< <?php echo ($nbr_lignes);?>;i++){
@@ -150,6 +188,8 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
         }
     }
     // Afficher les 5 articles suivants
+    let pages=document.getElementsByClassName("btn-secondary");
+    let array = Array.from(pages);
     array.forEach(element =>{
         
         element.addEventListener('click',()=>{
@@ -175,11 +215,6 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
         })
     }
     );
-
-    // Afficher les numéros de page
-    for (i=0;i< <?php echo ($nbr_lignes/5);?>;i++){
-        document.getElementsByClassName("btn-secondary")[i].style.display = "block";
-    }
 
     // Changer l'emplacement du contour bleu en fonction de l'onglet sélectionné
     for(j=5;j<=9;j++){

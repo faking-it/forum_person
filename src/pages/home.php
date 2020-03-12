@@ -3,7 +3,7 @@
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="./SASS-CSS/style.css">
+     <link rel="stylesheet" href="../sass/css/style.css">
      <title>Home</title>
  </head>
  <body>
@@ -32,23 +32,29 @@
 
 <div class="conteneur">
     <div class="list-group">
-    <ul class="ul_topic">
-        <!-- C'est ici qu'on va rechercher les données dans la sélection exécutée dans topics_home.php -->
+        <ul class="ul_topic">
+
+        <?php require "home_avatar_script.php";?>
         <?php foreach ($topics as $topic)  {?>
-        <li class="id_topic <?php echo $topic->board_name?>">
-        <a href="topic.php?id=<?php $topic->id_user ?>" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <div class="board"><?php echo $topic->board_name?></div>
-                <div>
-                    <img src="./images/<?php echo $topic->avatar?>" alt="avatar" class="avatar">
+            
+            <li class="id_topic <?php echo $topic->board_name?>">
+            <a href="topic.php?id=<?php $topic->id_user ?>" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <div class="board"><?php echo $topic->board_name?></div>
+                    <div>               
+                        <!-- ajout de l'image gravatar des utilisateurs grâce à leur e-mail -->
+                        <?php $avatar = trim($mail_Post[$parcour]); $parcour++;?>
+                        <img src= "https://2.gravatar.com/avatar/<?php echo md5($avatar)."s=100&";?>" alt="avatar" class="avatar">
+                    </div>
+                    <div class="title"><h5><?php echo $topic->title?></h5></div>
+                    <small class="date"><?php echo $topic->date_up?></small>
                 </div>
-                <div class="title"><h5><?php echo $topic->title?></h5></div>
-                <small class="date"><?php echo $topic->date_up?></small>
-            </div>
-        </a>
-        </li>
+            </a>
+            </li>
         <?php } ?>
-    </ul>
+
+        </ul>
+    
 
     <!-- Pagination -->
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -69,4 +75,3 @@
 
 </body>
 </html>
-

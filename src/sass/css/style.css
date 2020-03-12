@@ -1,75 +1,91 @@
 /* Barre de navigation à droite */
 
 .navbar {
-    justify-content: end;
+  justify-content: end;
 }
 
 /* Footer fixe en bas à gauche */
 
 .footer {
-    /*position: fixed;*/
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+  /*position: fixed;*/
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 /* Page Home */
 
 .list-group {
-    margin-bottom: 33%;
+  margin-bottom: 33%;
 }
 
 .ul_topic {
-    padding: 0;
+  padding: 0;
 }
 
 .id_topic {
-    list-style: none;
-    margin-bottom: 2%;
-    opacity: 60%;
+  list-style: none;
+  margin-bottom: 2%;
+  opacity: 60%;
 }
 
 .id_topic:hover {
-    opacity: 100%;
+  opacity: 100%;
 }
 
 .btn-toolbar {
-    align-self: center;
-    margin-bottom: 5%;
+  align-self: center;
+  margin-bottom: 5%;
 }
 
 .new_topic_button {
-    text-align: center;
+  text-align: center;
 }
 
 /* Conteneur */
 
 .conteneur {
-    width: 600px;
-    margin: auto;
-    margin-top: 5%;
+  width: 600px;
+  margin: auto;
+  margin-top: 5%;
 }
 
 /* Créer un Sujet */
 
 .contenu {
-    height: 30%;
+  height: 30%;
 }
 
 .return {
-    background-color: rgba(145, 145, 145, 0.883);
-    border-color: grey;
-    color: white;
+  background-color: rgba(145, 145, 145, 0.883);
+  border-color: grey;
+  color: white;
 }
 
 .return:hover {
-    background-color: rgba(107, 107, 107, 0.952);
-    border-color: grey;
-    color: white;
+  background-color: rgba(107, 107, 107, 0.952);
+  border-color: grey;
+  color: white;
 }
 
 .return:link {
-    background-color: rgba(107, 107, 107, 0.952);
-    border-color: grey;
+  background-color: rgba(107, 107, 107, 0.952);
+  border-color: grey;
+}
+
+/* Positionnement du compteur de nombre de caractères par Geoffrey le 5mars 2020 
+counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
+#counterGeo {
+  color: #757595;
+  position: relative;
+  bottom: 30px;
+  left: 550px;
+}
+
+#counterGeo2 {
+  color: #757595;
+  position: relative;
+  bottom: 30px;
+  left: 520px;
 }
