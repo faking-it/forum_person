@@ -38,4 +38,3 @@ $tables = array(
 
 //Fin
 
-?>
