@@ -5,6 +5,8 @@ body {
 /* Barre de navigation à droite */
 
 .navbar {
+  display: flex;
+
   justify-content: end;
 }
 
@@ -83,8 +85,6 @@ body {
 .btn_editer_profil {
   display: flex;
   margin-left: 400px;
-
-
 }
 
 /* FIN page editer profil by berthold*/
@@ -119,19 +119,44 @@ body {
   color: #757595;
   position: relative;
   bottom: 30px;
-  left: 550px;
+  left: 95%;
 }
 
 #counterGeo2 {
   color: #757595;
   position: relative;
   bottom: 30px;
-  left: 520px;
+  left: 95%;
 }
 
 /* topic delete by berthold */
 .delete_topic {
-  color: black
+  color: black;
+}
+
+/* positionnement avatar */
+.avatar {
+  position: absolute;
+  left: 140px;
+  bottom: 10px;
+}
+
+.list-group-item {
+  height: 100px;
+}
+
+.board {
+  position: relative;
+  top: 20px;
+}
+/* Positionnement message topic index */
+.messageTopicGeo {
+  position: relative;
+  top: 25px;
+}
+.date {
+  position: relative;
+  top: 25px;
 }
 
 /* end topic delete by berthold */
