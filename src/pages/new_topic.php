@@ -38,6 +38,8 @@ require "../pdo.php";
 <head>
     <title>Créer un sujet</title>  
 </head>
+<?php // include PATH."header.php";?>
+
 
 <?php ?>
     <div class="conteneur">
@@ -79,10 +81,11 @@ require "../pdo.php";
                 <button type="submit" class="btn btn-primary" name="send_topic">Poster</button>
             </div>
         </form>
+     
 
-    </div>
-    
-<?php include PATH."footer.php";
+    </div> 
+<script src="../js/input_limit.js"></script>
+<?php include PATH."footer.php";?>
 
 
 

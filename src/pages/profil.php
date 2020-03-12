@@ -56,7 +56,12 @@ include PATH . "header.php";
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">
+<<<<<<< HEAD
             <img src="https://2.gravatar.com/avatar/<?php echo md5($avatar);?>" class="card-img-top" alt="image de l'avatar">
+=======
+            
+            <img src="https://2.gravatar.com/avatar/<?php echo (md5($avatar));?>" class="card-img-top" alt="image de l'avatar">
+>>>>>>> 078f4dd02e0123df7b9f14af06f2e231e1d908ce
             </li>
         </ol>
     </nav>
@@ -70,8 +75,8 @@ include PATH . "header.php";
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><strong>Pseudo :</strong><?php echo $pseudo; ?></li>
-            <li class="breadcrumb-item active" aria-current="page"><strong>Signature :</strong><?php echo $signature ;?></li>
+            <li class="breadcrumb-item"><strong>Pseudo : </strong><?php echo $pseudo; ?></li>
+            <li class="breadcrumb-item active" aria-current="page"><strong>Signature : </strong><?php echo $signature ;?></li>
         </ol>
     </nav>
 
@@ -83,7 +88,11 @@ include PATH . "header.php";
                 <p>
                 <strong>Titre :<a href="topic_detail.php?id_topic=<?php echo $topic['id_topic'] ;?>"> <?php echo $topic['title'] ;?></a></strong> <br>
                     <strong>Créé le : <?php echo $topic['date_up'];?></strong> <br>
+<<<<<<< HEAD
                     Nom de la catégorie : <strong> <?php echo $topic['board_name'];?> </strong>
+=======
+                   <strong> Nom de la catégorie </strong><?php echo $topic['board_name'];?>
+>>>>>>> 078f4dd02e0123df7b9f14af06f2e231e1d908ce
             </p>
             </li>
             <?php }?>

@@ -12,6 +12,7 @@ include "../pdo.php";
 if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_topic'] > 0) {
 
     $id_topic = $_GET['id_topic'];
+   
     //var_dump($id_topic);
 
     $sql2 = ("SELECT  id_topic, title, content, topics.date_crea , topics.date_up,  board_name AS categorie, users.id_user, pseudo

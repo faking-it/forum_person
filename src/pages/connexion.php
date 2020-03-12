@@ -1,5 +1,9 @@
 <?php
 session_start();
+<<<<<<< HEAD
+=======
+//include "header.php";
+>>>>>>> 078f4dd02e0123df7b9f14af06f2e231e1d908ce
     require "../pdo.php";
     if(isset($_POST['connect'])) {
         $mail = htmlspecialchars($_POST['mail']);
@@ -22,7 +26,7 @@ session_start();
             $_SESSION['mail']   = $userinfo['mail'];
             $_SESSION['avatar']   = $userinfo['avatar'];
             if(isset($_SESSION["id"])){
-                header('Location: http://localhost/index.php'); 
+                header('Location: http://192.168.99.100/index.php'); 
             }
             $message= "$user_pseudo . 
             <a href='affiche.php'>Cliquez ici pour voir la liste des topics</a> <br>
@@ -47,6 +51,7 @@ session_start();
         }
     }
 
+<<<<<<< HEAD
     define("PATH", "./");
     include PATH."header.php";
 ?>
@@ -91,6 +96,12 @@ session_start();
     </ul>
 </nav>
  -->
+=======
+define("PATH", "./");
+include PATH."header.php";
+?>
+
+>>>>>>> 078f4dd02e0123df7b9f14af06f2e231e1d908ce
 <div class="conteneur">
     <h1>Connexion</h1>
    <div class="conteneur">
@@ -122,7 +133,11 @@ session_start();
        
 
 <?php
+<<<<<<< HEAD
  include PATH."footer.php";
 
 
+=======
+>>>>>>> 078f4dd02e0123df7b9f14af06f2e231e1d908ce
 
+include PATH."footer.php";

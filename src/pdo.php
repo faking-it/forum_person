@@ -23,18 +23,3 @@ $tables = array(
     "topics",
     "comments");
 
-/*foreach($tables as $table){
-    
-
-    $sql = "SELECT * FROM $table ORDER BY date_crea DESC";
-    $sth = $link->prepare($sql);
-    $sth->execute();
-
-    $$table = $sth->fetchAll(PDO::FETCH_OBJ);
-    $sth->closeCursor();
-    $sth = null;
-}
-*/
-
-//Fin
-
