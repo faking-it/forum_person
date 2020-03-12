@@ -54,7 +54,7 @@ require PATH."header.php";
                         <?php $avatar = trim($mail_Post[$parcour]); $parcour++;?>
                         <img src= "https://2.gravatar.com/avatar/<?php echo md5($topic->avatar)."s=100&";?>" alt="avatar" class="avatar">
                     </div>
-                    <div class="title"><h5><?php echo $topic->title?></h5></div>
+                    <div class="title"><h5 class="messageTopicGeo"><?php echo $topic->title?></h5></div>
                     <small class="date"><?php echo $topic->date_up?></small>
                 </div>
             </a>

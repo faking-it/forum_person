@@ -22,7 +22,7 @@ session_start();
             $_SESSION['pseudo'] = $userinfo['pseudo'];
             $_SESSION['mail']   = $userinfo['mail'];
             if(isset($_SESSION["id"])){
-                header('Location: http://192.168.99.100/index.php'); 
+                header('Location: ../index.php'); 
             }
             $message= "$user_pseudo . 
             <a href='affiche.php'>Cliquez ici pour voir la liste des topics</a> <br>
