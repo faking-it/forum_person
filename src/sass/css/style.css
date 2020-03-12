@@ -1,3 +1,7 @@
+body {
+  /* background-color: rgb(200, 221, 126);*/
+}
+
 /* Barre de navigation à droite */
 
 .navbar {
@@ -46,9 +50,10 @@
 /* Conteneur */
 
 .conteneur {
-  width: 600px;
+  width: 80%;
   margin: auto;
   margin-top: 5%;
+  /*  background-color: whitesmoke; */
 }
 
 /* Créer un Sujet */
@@ -74,8 +79,42 @@
   border-color: grey;
 }
 
+/* page editer profil by berthold */
+.btn_editer_profil {
+  display: flex;
+  margin-left: 400px;
+
+
+}
+
+/* FIN page editer profil by berthold*/
+
+/* Créer un Sujet */
+
+.contenu {
+  height: 30%;
+  padding-bottom: 170px;
+}
+
+.return {
+  background-color: rgba(145, 145, 145, 0.883);
+  border-color: grey;
+  color: white;
+}
+
+.return:hover {
+  background-color: rgba(107, 107, 107, 0.952);
+  border-color: grey;
+  color: white;
+}
+
+.return:link {
+  background-color: rgba(107, 107, 107, 0.952);
+  border-color: grey;
+}
+
 /* Positionnement du compteur de nombre de caractères par Geoffrey le 5mars 2020 
-counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
+  counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
 #counterGeo {
   color: #757595;
   position: relative;
@@ -89,3 +128,10 @@ counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
   bottom: 30px;
   left: 520px;
 }
+
+/* topic delete by berthold */
+.delete_topic {
+  color: black
+}
+
+/* end topic delete by berthold */
