@@ -1,7 +1,5 @@
 <?php
 session_start();
-//include "header.php";
-define("PATH", "./");
     require "../pdo.php";
     if(isset($_POST['connect'])) {
         $mail = htmlspecialchars($_POST['mail']);
@@ -22,6 +20,7 @@ define("PATH", "./");
             $_SESSION['id']     = $userinfo['id_user'];
             $_SESSION['pseudo'] = $userinfo['pseudo'];
             $_SESSION['mail']   = $userinfo['mail'];
+            $_SESSION['avatar']   = $userinfo['avatar'];
             if(isset($_SESSION["id"])){
                 header('Location: http://localhost/index.php'); 
             }
@@ -48,11 +47,10 @@ define("PATH", "./");
         }
     }
 
-/* define("PATH","./");
-require "header.php"
- */
+    define("PATH", "./");
+    include PATH."header.php";
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -92,7 +90,7 @@ require "header.php"
         
     </ul>
 </nav>
-
+ -->
 <div class="conteneur">
     <h1>Connexion</h1>
    <div class="conteneur">
@@ -124,7 +122,7 @@ require "header.php"
        
 
 <?php
-// include PATH."footer.php";
+ include PATH."footer.php";
 
 
 

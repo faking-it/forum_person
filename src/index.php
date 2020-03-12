@@ -52,11 +52,12 @@ $sql = "SELECT *
        <?php 
        foreach ($topics as $topic)  {?>
        <li class="id_topic">
-       <a href="<? if (isset($_SESSION["id"])){echo 'pages/topic_details.php?id_topic='.$topic->id_topic;} else{ echo "#";} ?>" class="list-group-item list-group-item-action">
+       <a href="<? if (isset($_SESSION["id"])){echo 'pages/topic_details.php?id_topic='.$topic->id_topic;} else{ echo "#";} ?>" 
+       class="list-group-item list-group-item-action">
            <div class="d-flex w-100 justify-content-between">
                <div>
-                   <img src="https://2.gravatar.com/avatar/<?php echo $topic->avatar;?>" alt="image avatar" class="avatar">
-               </div>
+               <img src="https://2.gravatar.com/avatar/<?php echo md5($_SESSION["avatar"]); ?>" class="card-img-top" alt="image de l'avatar">
+          </div>
                <div class="title"><h5><?php echo $topic->title?></h5></div>
                <small class="date"><?php echo $topic->date_crea?> </small>
            </div>

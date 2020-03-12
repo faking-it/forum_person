@@ -175,7 +175,7 @@ if (isset($_POST['send_inscription'])) {
   
        
 
-<?php include PATH."footer.php";
+<?php require "footer.php";
 
 
 

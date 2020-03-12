@@ -21,7 +21,7 @@ if(isset($_REQUEST["id_comment"]) and $_SESSION["id"]!=""){
 
     if(isset($_SESSION["id"])){
         echo  $message = 'le commentaire ' . $id_comment . ' a été bien effacé';
-        //header("Location:index.php");
+        //header('Location: http://localhost/index.php'); ;
     } 
        
       
