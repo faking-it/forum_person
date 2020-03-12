@@ -2,17 +2,6 @@
 define("PATH", "./pages/");
 require PATH."header.php";
 
-
-//requete affichage topics
-require "pdo.php";
-$sql = "SELECT * 
-        FROM topics
-         ORDER BY date_crea DESC";
-    $sth = $link->prepare($sql);
-    $sth->execute();
-
-    $topics = $sth->fetchAll(PDO::FETCH_OBJ);
-//fin requete
 ?>
 
 <head>
@@ -59,7 +48,7 @@ $sql = "SELECT *
             <a href="<? if (isset($_SESSION["id"])){echo 'pages/topic_details.php?id_topic='.$topic->id_topic;} else{ echo "#";} ?>"
             class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
-                    <div class="board"><?php echo $topic->board_name?></div>
+                    <div class="board"><?php echo $topic->board_name;?></div>
                     <div>               
                         <!-- ajout de l'image gravatar des utilisateurs grâce à leur e-mail -->
                         <?php $avatar = trim($mail_Post[$parcour]); $parcour++;?>

@@ -2,7 +2,7 @@
 
 require "pdo.php";
 
-$sql = "SELECT date_up, title, avatar, board_id, board_name
+$sql = "SELECT date_up, title, avatar, board_id, board_name, id_topic
 FROM topics 
 INNER JOIN users ON topics.user_id = users.id_user
 INNER JOIN boards ON topics.board_id = boards.id_board

@@ -7,7 +7,7 @@ $dbname = "person";
 
 $dsn = "mysql:host=$host;dbname=$dbname";
 
-$options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
+$options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4");
 
 try {
     $link= new \PDO($dsn, $user, $pass, $options);
@@ -22,19 +22,4 @@ $tables = array(
     "boards",
     "topics",
     "comments");
-
-/*foreach($tables as $table){
-    
-
-    $sql = "SELECT * FROM $table ORDER BY date_crea DESC";
-    $sth = $link->prepare($sql);
-    $sth->execute();
-
-    $$table = $sth->fetchAll(PDO::FETCH_OBJ);
-    $sth->closeCursor();
-    $sth = null;
-}
-*/
-
-//Fin
 

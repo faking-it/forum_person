@@ -91,8 +91,9 @@ foreach ($boards as $board)  {?>
 
             // Afficher les numéros de page
             c = cpt_<?php echo $tab_cptr[$nom_cptr]?>/3;
-
-            for (i=0;i<c;i++){
+            
+            if (c>1){
+                for (i=0;i<c;i++){
                 document.getElementsByClassName("btn-toolbar")[0].appendChild(document.createElement('div'));
                 document.getElementsByClassName("btn-toolbar")[0].lastChild.setAttribute("class","btn-group mr-2");
                 document.getElementsByClassName("btn-toolbar")[0].lastChild.setAttribute("role","group");
@@ -102,8 +103,8 @@ foreach ($boards as $board)  {?>
                 document.getElementsByClassName("btn-group mr-2")[i].lastChild.setAttribute("type","button");
                 document.getElementsByClassName("btn-group mr-2")[i].lastChild.setAttribute("class","btn btn-secondary "+i);
                 document.getElementsByClassName("btn-group mr-2")[i].lastChild.innerHTML = ++i,
-                i--;
-                
+                i--;  
+                }
             }
 
             // Afficher les articles de la page de la catégorie sélectionnée

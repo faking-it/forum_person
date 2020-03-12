@@ -93,7 +93,7 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
         if (isset($_POST['send_comment'])) {
             $user_id   =       intval($_POST['user_id']);
             $topic_id  =       intval($_POST['topic_id']);
-            $comment   =      htmlspecialchars($_POST['content']) ;
+            $comment   =       htmlspecialchars($_POST['content']) ;
 
             $user_id    =   $_SESSION["id"];
             $topic_id   =   $topic_infos['id_topic'];
@@ -113,7 +113,7 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
                    
                $stmnt = $link->prepare($sql_inst);
                $stmnt->execute(array($comment, $user_id, $topic_id));
-              var_dump($stmnt->execute());
+               //var_dump($stmnt->execute());
                if ($stmnt && $stmnt->rowCount() ==1 ) {
                   // $message = 'success';
                    $message = "Votre commentaire a été bien ajouté .. merci!";

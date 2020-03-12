@@ -23,7 +23,7 @@ if(isset($_GET['id_user']) AND $_GET['id_user'] ==$_SESSION["id"] AND $_GET['id_
     
     
     //selection des topics selon leur catégories 
-    $tpcs = ("SELECT DISTINCT date_up, title, avatar, board_id, Board_name, id_topic
+    $tpcs = ("SELECT DISTINCT date_up, title, avatar, board_id, board_name, id_topic
     FROM topics
     INNER JOIN users ON topics.user_id = users.id_user
     INNER JOIN boards ON topics.board_id = boards.id_board
@@ -71,8 +71,8 @@ include PATH . "header.php";
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><strong>Pseudo :</strong><?php echo $pseudo; ?></li>
-            <li class="breadcrumb-item active" aria-current="page"><strong>Signature :</strong><?php echo $signature ;?></li>
+            <li class="breadcrumb-item"><strong>Pseudo : </strong><?php echo $pseudo; ?></li>
+            <li class="breadcrumb-item active" aria-current="page"><strong>Signature : </strong><?php echo $signature ;?></li>
         </ol>
     </nav>
 
@@ -84,7 +84,7 @@ include PATH . "header.php";
                 <p>
                 <strong>Titre :<a href="topic_detail.php?id_topic=<?php echo $topic['id_topic'] ;?>"> <?php echo $topic['title'] ;?></a></strong> <br>
                     <strong>Créé le : <?php echo $topic['date_up'];?></strong> <br>
-                   <strong> Nom de la catégorie </strong><?php echo $topic['name'];?>
+                   <strong> Nom de la catégorie </strong><?php echo $topic['board_name'];?>
             </p>
             </li>
             <?php }?>
