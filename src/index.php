@@ -37,7 +37,6 @@ require PATH."header.php";
 <?php require PATH."topics_home.php";?>
 
 <div class="conteneur">
-<<<<<<< HEAD
    <div class="list-group">
    <ul class="ul_topic">
        <?php 
@@ -60,32 +59,6 @@ require PATH."header.php";
        <button type='button' class='btn btn-primary'>Créer un sujet</button>
    </a>";}else{echo "";} ?>
    
-=======
-    <div class="list-group">
-        <ul class="ul_topic">
-
-        <?php require PATH."home_avatar_script.php";?>
-        <?php foreach ($topics as $topic)  {?>
-            
-            <li class="id_topic <?php echo $topic->board_name?>">
-            <!-- <a href="topic.php?id=<?php $topic->id_user ?>" class="list-group-item list-group-item-action"> -->
-            <a href="<? if (isset($_SESSION["id"])){echo 'pages/topic_details.php?id_topic='.$topic->id_topic;} else{ echo "#";} ?>"
-            class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                    <div class="board"><?php echo $topic->board_name;?></div>
-                    <div>               
-                        <!-- ajout de l'image gravatar des utilisateurs grâce à leur e-mail -->
-                        <?php $avatar = trim($mail_Post[$parcour]); $parcour++;?>
-                        <img src= "https://2.gravatar.com/avatar/<?php echo md5($topic->avatar)."s=100&";?>" alt="avatar" class="avatar">
-                    </div>
-                    <div class="title"><h5><?php echo $topic->title?></h5></div>
-                    <small class="date"><?php echo $topic->date_up?></small>
-                </div>
-            </a>
-            </li>
-        <?php } ?>
-        </ul>
->>>>>>> 078f4dd02e0123df7b9f14af06f2e231e1d908ce
 
     <!-- Pagination -->
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">

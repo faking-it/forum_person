@@ -1,10 +1,6 @@
 <?php
 session_start();
-<<<<<<< HEAD
-define("PATH","./")
-=======
 define("PATH","./");
->>>>>>> 078f4dd02e0123df7b9f14af06f2e231e1d908ce
 ?>
 <!DOCTYPE html>
 <html lang="fr">

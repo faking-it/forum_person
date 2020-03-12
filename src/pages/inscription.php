@@ -175,11 +175,7 @@ if (isset($_POST['send_inscription'])) {
   
        
 
-<<<<<<< HEAD
 <?php require "footer.php";
-=======
-<?php include "footer.php";
->>>>>>> 078f4dd02e0123df7b9f14af06f2e231e1d908ce
 
 
 
