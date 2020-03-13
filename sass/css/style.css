@@ -1,90 +1,148 @@
 @charset "UTF-8";
-body {
-  /* background-color: rgb(200, 221, 126);*/ }
+
+body {}
 
 /* Barre de navigation à droite */
+
 .navbar {
   display: flex;
-  justify-content: end; }
+  background-image: linear-gradient(#007bff, white);
+  height: 100px;
+
+  justify-content: end;
+}
+
+.nav-link {
+  color: #007bff;
+}
+
+.page {
+  color: white;
+}
 
 /* Footer fixe en bas à gauche */
+
 .footer {
   left: 0;
   bottom: 0;
-  width: 100%;
-  text-align: center; }
+  text-align: center;
+  height: 200px;
+  background-image: linear-gradient(white, #007bff);
+}
+
+#PersonTeam {
+  font-size: 2em;
+  color: white;
+  position: relative;
+  top: 100px;
+}
 
 /* Page Home */
-.list-group {
-  margin-bottom: 33%; }
 
 .ul_topic {
-  padding: 0; }
+  padding: 0;
+}
 
 .id_topic {
   list-style: none;
   margin-bottom: 2%;
-  opacity: 60%; }
+  opacity: 60%;
+}
 
 .id_topic:hover {
-  opacity: 100%; }
+  opacity: 100%;
+}
 
 .btn-toolbar {
   align-self: center;
-  margin-bottom: 5%; }
+  margin-bottom: 5%;
+}
 
 .new_topic_button {
-  text-align: center; }
+  text-align: center;
+}
 
 /* Conteneur */
+
 .conteneur {
   width: 80%;
   margin: auto;
   margin-top: 5%;
-  /* background-color: whitesmoke; */ }
+  margin-bottom: 5%;
+
+  /* background-color: whitesmoke; */
+}
+
+.btn {
+  position: relative;
+  top: 30px;
+  height: 40px;
+  width: 80px;
+}
+
+.btn-primary {
+  position: fixed;
+  top: 90%;
+  height: 40px;
+  width: 150px;
+  z-index: 3;
+  left: 44%;
+}
 
 /* Créer un Sujet */
+
 .contenu {
-  height: 30%; }
+  height: 30%;
+}
 
 .return {
   background-color: rgba(145, 145, 145, 0.883);
   border-color: grey;
-  color: white; }
+  color: white;
+}
 
 .return:hover {
   background-color: rgba(107, 107, 107, 0.952);
   border-color: grey;
-  color: white; }
+  color: white;
+}
 
 .return:link {
   background-color: rgba(107, 107, 107, 0.952);
-  border-color: grey; }
+  border-color: grey;
+}
 
 /* page editer profil by berthold */
 .btn_editer_profil {
   display: flex;
-  margin-left: 400px; }
+  margin-left: 400px;
+}
 
 /* FIN page editer profil by berthold*/
+
 /* Créer un Sujet */
+
 .contenu {
   height: 30%;
-  padding-bottom: 170px; }
+  padding-bottom: 170px;
+}
 
 .return {
   background-color: rgba(145, 145, 145, 0.883);
   border-color: grey;
-  color: white; }
+  color: white;
+}
 
 .return:hover {
   background-color: rgba(107, 107, 107, 0.952);
   border-color: grey;
-  color: white; }
+  color: white;
+}
 
 .return:link {
   background-color: rgba(107, 107, 107, 0.952);
-  border-color: grey; }
+  border-color: grey;
+}
 
 /* Positionnement du compteur de nombre de caractères par Geoffrey le 5mars 2020
 counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
@@ -92,40 +150,58 @@ counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
   color: #757595;
   position: relative;
   bottom: 30px;
-  left: 95%; }
+  left: 95%;
+}
 
 #counterGeo2 {
   color: #757595;
   position: relative;
   bottom: 30px;
-  left: 95%; }
+  left: 95%;
+}
 
 /* topic delete by berthold */
 .delete_topic {
-  color: black; }
+  color: black;
+}
 
 /* positionnement avatar */
 .avatar {
   position: absolute;
   left: 140px;
-  bottom: 10px; }
+  bottom: 10px;
+}
 
 .list-group-item {
-  height: 100px; }
+  height: 100px;
+}
 
 .board {
   position: relative;
-  top: 20px; }
+  top: 20px;
+}
 
-/* Positionnement message topic index */
+/* Positionnement message topic index /
 .messageTopicGeo {
-  position: relative;
-  top: 25px; }
-
+position: relative;
+top: 25px;
+}
 .date {
-  position: relative;
-  top: 25px; }
+position: relative;
+top: 25px;
+}
+/ Gestion design par Geoffrey */
 
-/* end topic delete by berthold */
+.active {
+  border: 1px solid black;
+}
 
-/*# sourceMappingURL=style.css.map */
+.home {
+  padding: 10px;
+}
+
+.couleurConnexion {
+  color: white;
+}
+
+/* end topic delete by bertholdsd */
