@@ -1,6 +1,6 @@
 <?php 
 
-require "pdo.php";
+require "../pdo.php";
 
 $sql = "SELECT date_up, title, avatar, board_id, board_name, id_topic
 FROM topics 
