@@ -29,19 +29,19 @@ define("PATH","./");
             {echo "Profil"; } else{echo "";}
                ?></a>
         </li>
-        <li class="head-btn nav-item">
-            <a class="nav-link active" href="<?php echo PATH;?>inscription.php"><?php if(isset($_SESSION["id"]))
+        <li class="nav-item">
+            <a class="head-btn nav-link active" href="<?php echo PATH;?>inscription.php"><?php if(isset($_SESSION["id"]))
             {echo ""; } else{echo "Inscription";}
                ?></a>
         </li>
-        <li class="head-btn nav-item">
-            <a class="nav-link active" href="<?php echo PATH;?>connexion.php"><?php if(isset($_SESSION["id"]))
+        <li class="nav-item">
+            <a class="head-btn nav-link active" href="<?php echo PATH;?>connexion.php"><?php if(isset($_SESSION["id"]))
             {echo ""; } else{echo "Se Connecter";}
                ?></a>
         </li>
 
-        <li class="head-btn nav-item">
-            <a class="nav-link active" href="<?php echo PATH;?>deconnexion.php"><?php if(isset($_SESSION["id"]))
+        <li class="nav-item">
+            <a class="head-btn nav-link active" href="<?php echo PATH;?>deconnexion.php"><?php if(isset($_SESSION["id"]))
             {echo "Déconnexion"; } else{echo "";}
                ?></a>
         </li>
