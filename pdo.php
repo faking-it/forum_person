@@ -1,9 +1,9 @@
 <?php
 
-$host   = "mysql";
-$user   = "root";
-$pass   = "root";
-$dbname = "person";
+$host   = "g4yltwdo6z0izlm6.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+$user   = "bmrdiz3f0jm6kh4g";
+$pass   = "k6kuc4z9jkjal81t";
+$dbname = "p92u6s9jlpuzov62";
 
 $dsn = "mysql:host=$host;dbname=$dbname";
 
