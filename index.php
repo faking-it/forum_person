@@ -1,5 +1,5 @@
 <?php 
-define("PATH", "./pages/");
+define("PATH", "pages/");
 require PATH."header.php";
 
 ?>
