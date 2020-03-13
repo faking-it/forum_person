@@ -10,7 +10,14 @@ foreach ($boards as $board)  {?>
 
     // ALL
     // Afficher MAX 5 topics.
-    let nbr_pages=parseInt(<?php echo ($nbr_lignes/5)+1;?>);
+    let nbr_pages;
+    if (<?php echo $nbr_lignes%5;?>==0){
+        nbr_pages=parseInt(<?php echo ($nbr_lignes/5);?>);
+    }
+    else {
+        nbr_pages=parseInt(<?php echo ($nbr_lignes/5)+1;?>);
+    }
+    
     <?php $diz=5;?>
 
     for (i=0;i<nbr_pages;i++){
@@ -35,25 +42,30 @@ foreach ($boards as $board)  {?>
     // Afficher les 5 topics suivants
     let pages=document.getElementsByClassName("btn-secondary");
     let array = Array.from(pages);
+    let array_length = array.length;
+
+    if(array_length<2){
+        document.getElementsByClassName("btn-toolbar")[0].style.display = "none";
+    }
 
     array.forEach(element =>{
         
         element.addEventListener('click',()=>{
 
-            let a = (element.innerHTML*5)-5;
-            let b = a+<?php echo ($nbr_lignes%10);?>;
+            let a_1 = (element.innerHTML*5)-5;
+            let b = a_1+<?php echo ($nbr_lignes%5);?>;
 
             for (i=0;i< <?php echo ($nbr_lignes);?>; i++){
                 document.getElementsByClassName("id_topic")[i].style.display = "none";
             }
 
-            if (a+5 < <?php echo ($nbr_lignes);?>){
-                for (i=a;i<a+5;i++){
+            if (<?php echo $nbr_lignes%5;?> == 0){
+                for (i=a_1;i<a_1+5;i++){
                     document.getElementsByClassName("id_topic")[i].style.display = "block";
                 }
             }
             else {
-                for (i=a;i<b;i++){
+                for (i=a_1;i<b;i++){
                     document.getElementsByClassName("id_topic")[i].style.display = "block";
                 }
             }
@@ -191,24 +203,30 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
     // Afficher les 5 articles suivants
     let pages=document.getElementsByClassName("btn-secondary");
     let array = Array.from(pages);
+    let array_length = array.length;
+
+    if(array_length<2){
+        document.getElementsByClassName("btn-toolbar")[0].style.display = "none";
+    }
+
     array.forEach(element =>{
         
         element.addEventListener('click',()=>{
 
-            let a = (element.innerHTML*5)-5;
-            let b = a+<?php echo ($nbr_lignes%10);?>;
+            let a_1 = (element.innerHTML*5)-5;
+            let b = a_1+<?php echo ($nbr_lignes%5);?>;
 
             for (i=0;i< <?php echo ($nbr_lignes);?>; i++){
                 document.getElementsByClassName("id_topic")[i].style.display = "none";
             }
 
-            if (a+5 < <?php echo ($nbr_lignes);?>){
-                for (i=a;i<a+5;i++){
+            if (<?php echo $nbr_lignes%5;?> == 0){
+                for (i=a_1;i<a_1+5;i++){
                     document.getElementsByClassName("id_topic")[i].style.display = "block";
                 }
             }
             else {
-                for (i=a;i<b;i++){
+                for (i=a_1;i<b;i++){
                     document.getElementsByClassName("id_topic")[i].style.display = "block";
                 }
             }

@@ -127,5 +127,8 @@ counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
   top: 25px; }
 
 /* end topic delete by berthold */
+.date {
+  position: relative;
+  top: 25px; }
 
 /*# sourceMappingURL=style.css.map */

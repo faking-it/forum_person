@@ -1,0 +1,163 @@
+body {
+    /* background-color: rgb(200, 221, 126);*/
+}
+
+/* Barre de navigation à droite */
+
+.navbar {
+    display: flex;
+
+    justify-content: end;
+}
+
+/* Footer fixe en bas à gauche */
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Page Home */
+
+.list-group {
+    margin-bottom: 33%;
+}
+
+.ul_topic {
+    padding: 0;
+}
+
+.id_topic {
+    list-style: none;
+    margin-bottom: 2%;
+    opacity: 60%;
+}
+
+.id_topic:hover {
+    opacity: 100%;
+}
+
+.btn-toolbar {
+    align-self: center;
+    margin-bottom: 5%;
+}
+
+.new_topic_button {
+    text-align: center;
+}
+
+/* Conteneur */
+
+.conteneur {
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    /* background-color: whitesmoke; */
+}
+
+/* Créer un Sujet */
+
+.contenu {
+    height: 30%;
+}
+
+.return {
+    background-color: rgba(145, 145, 145, 0.883);
+    border-color: grey;
+    color: white;
+}
+
+.return:hover {
+    background-color: rgba(107, 107, 107, 0.952);
+    border-color: grey;
+    color: white;
+}
+
+.return:link {
+    background-color: rgba(107, 107, 107, 0.952);
+    border-color: grey;
+}
+
+/* page editer profil by berthold */
+.btn_editer_profil {
+    display: flex;
+    margin-left: 400px;
+}
+
+/* FIN page editer profil by berthold*/
+
+/* Créer un Sujet */
+
+.contenu {
+    height: 30%;
+    padding-bottom: 170px;
+}
+
+.return {
+    background-color: rgba(145, 145, 145, 0.883);
+    border-color: grey;
+    color: white;
+}
+
+.return:hover {
+    background-color: rgba(107, 107, 107, 0.952);
+    border-color: grey;
+    color: white;
+}
+
+.return:link {
+    background-color: rgba(107, 107, 107, 0.952);
+    border-color: grey;
+}
+
+/* Positionnement du compteur de nombre de caractères par Geoffrey le 5mars 2020
+counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
+#counterGeo {
+    color: #757595;
+    position: relative;
+    bottom: 30px;
+    left: 95%;
+}
+
+#counterGeo2 {
+    color: #757595;
+    position: relative;
+    bottom: 30px;
+    left: 95%;
+}
+
+/* topic delete by berthold */
+.delete_topic {
+    color: black;
+}
+
+/* positionnement avatar */
+.avatar {
+    position: absolute;
+    left: 140px;
+    bottom: 10px;
+}
+
+.list-group-item {
+    height: 100px;
+}
+
+.board {
+    position: relative;
+    top: 20px;
+}
+
+/* Positionnement message topic index */
+.messageTopicGeo {
+    position: relative;
+    top: 25px;
+}
+
+.date {
+    position: relative;
+    top: 25px;
+}
+
+/* end topic delete by berthold */
