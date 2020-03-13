@@ -64,11 +64,16 @@ foreach ($boards as $board)  {?>
                     document.getElementsByClassName("id_topic")[i].style.display = "block";
                 }
             }
-            else {
+            else if (element.innerHTML == array.length) {
                 for (i=a_1;i<b;i++){
                     document.getElementsByClassName("id_topic")[i].style.display = "block";
-                }
+                }     
             }
+                else {
+                    for (i=a_1;i<a_1+5;i++){
+                    document.getElementsByClassName("id_topic")[i].style.display = "block";
+                } 
+                }
             
         })
     }
