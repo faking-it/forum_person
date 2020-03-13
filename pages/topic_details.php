@@ -188,8 +188,9 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
 
         ?>
     </div>
+    <nav aria-label="breadcrumb">
     <h4>Liste des commentaires</h4>
-    <ul class="">
+    <ul class="list-group list-group-flush">
         <?php
         $Parsedown = new Parsedown();
         while ($comment = $req->fetch()) {
