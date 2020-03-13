@@ -1,29 +1,41 @@
-body {
-    /* background-color: rgb(200, 221, 126);*/
-}
+body {}
 
 /* Barre de navigation à droite */
 
 .navbar {
     display: flex;
+    background-image: linear-gradient(#007bff, white);
+    height: 100px;
 
     justify-content: end;
+}
+
+.nav-link {
+    color: #007bff;
+}
+
+.page {
+    color: white;
 }
 
 /* Footer fixe en bas à gauche */
 
 .footer {
-    left: 0;
+    /position: fixed;/ left: 0;
     bottom: 0;
-    width: 100%;
     text-align: center;
+    height: 200px;
+    background-image: linear-gradient(white, #007bff);
+}
+
+#PersonTeam {
+    font-size: 2em;
+    color: white;
+    position: relative;
+    top: 100px;
 }
 
 /* Page Home */
-
-.list-group {
-    margin-bottom: 33%;
-}
 
 .ul_topic {
     padding: 0;
@@ -54,7 +66,25 @@ body {
     width: 80%;
     margin: auto;
     margin-top: 5%;
+    margin-bottom: 5%;
+
     /* background-color: whitesmoke; */
+}
+
+.btn {
+    position: relative;
+    top: 30px;
+    height: 40px;
+    width: 80px;
+}
+
+.btn-primary {
+    position: fixed;
+    top: 90%;
+    height: 40px;
+    width: 150px;
+    z-index: 3;
+    left: 44%;
 }
 
 /* Créer un Sujet */
@@ -149,15 +179,27 @@ counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
     top: 20px;
 }
 
-/* Positionnement message topic index */
+/* Positionnement message topic index /
 .messageTopicGeo {
-    position: relative;
-    top: 25px;
+position: relative;
+top: 25px;
+}
+.date {
+position: relative;
+top: 25px;
+}
+/ Gestion design par Geoffrey */
+
+.active {
+    border: 1px solid black;
 }
 
-.date {
-    position: relative;
-    top: 25px;
+.home {
+    padding: 10px;
+}
+
+.couleurConnexion {
+    color: white;
 }
 
 /* end topic delete by berthold */
