@@ -178,6 +178,8 @@ if (isset($_POST['send_inscription'])) {
   <input type="submit" value="S'inscrire" name="send_inscription">
 </form>
    </div>
+   </div>
+   </div>
   
        
 
