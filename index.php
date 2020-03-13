@@ -79,5 +79,5 @@ require PATH."header.php";
     </div>
 </div>
 
-<?php include "./js/home_script.php"; 
-require PATH."footer.php";?>
+<?php require PATH."footer.php"; include "./js/home_script.php"; 
+?>
