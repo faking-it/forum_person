@@ -39,11 +39,6 @@ require PATH."header.php";
 <div class="conteneur">
     <div class="list-group">
         <ul class="ul_topic">
-        
-<!-- Créer un sujet -->
-    <?php if (isset($_SESSION['id'])){echo "<a class='new_topic_button' href='./pages/new_topic.php'>
-        <button type='button' class='btn btn-primary'>Créer un sujet</button>
-        </a>";}else{echo "";} ?>
 
         <?php require PATH."home_avatar_script.php";?>
         <?php foreach ($topics as $topic)  {?>
@@ -76,9 +71,13 @@ require PATH."header.php";
         <?php }?>
     </div>
 
-    
+    <!-- Créer un sujet -->
+    <?php if (isset($_SESSION['id'])){echo "<a class='new_topic_button' href='./pages/new_topic.php'>
+        <button type='button' class='btn btn-primary'>Créer un sujet</button>
+        </a>";}else{echo "";} ?>
+
     </div>
 </div>
 
-<?php require PATH."footer.php"; include "./js/home_script.php"; 
+<?php require PATH."footer.php"; include "js/home_script.php"; 
 ?>
