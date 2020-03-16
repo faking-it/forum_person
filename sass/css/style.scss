@@ -1,0 +1,213 @@
+body {}
+
+/* Barre de navigation à droite */
+
+.navbar {
+    display: flex;
+    background-image: linear-gradient(#007bff, white);
+    height: 100px;
+
+    justify-content: end;
+}
+
+.nav-link {
+    color: #007bff;
+}
+
+.page {
+    color: white;
+}
+
+/* Footer fixe en bas à gauche */
+
+.footer {
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    height: 200px;
+    background-image: linear-gradient(white, #007bff);
+}
+
+#PersonTeam {
+    font-size: 2em;
+    color: white;
+    position: relative;
+    top: 100px;
+}
+
+/* Page Home */
+
+.ul_topic {
+    padding: 0;
+}
+
+.id_topic {
+    list-style: none;
+    margin-bottom: 2%;
+    opacity: 60%;
+}
+
+.id_topic:hover {
+    opacity: 100%;
+}
+
+.btn-toolbar {
+    align-self: center;
+    margin-bottom: 5%;
+}
+
+.new_topic_button {
+    text-align: center;
+}
+
+/* Conteneur */
+
+.conteneur {
+    width: 55%;
+    margin: auto;
+    margin-top: 5%;
+
+    /* background-color: whitesmoke; */
+}
+
+.btn {
+    position: relative;
+    top: 30px;
+    height: 40px;
+    width: 80px;
+}
+
+.btn-primary {
+    position: fixed;
+    top: 90%;
+    height: 40px;
+    width: 150px;
+    z-index: 3;
+    left: 44%;
+}
+
+/* Créer un Sujet */
+
+.contenu {
+    height: 30%;
+}
+
+.return {
+    background-color: rgba(145, 145, 145, 0.883);
+    border-color: grey;
+    color: white;
+}
+
+.return:hover {
+    background-color: rgba(107, 107, 107, 0.952);
+    border-color: grey;
+    color: white;
+}
+
+.return:link {
+    background-color: rgba(107, 107, 107, 0.952);
+    border-color: grey;
+}
+
+/* page editer profil by berthold */
+.btn_editer_profil {
+    display: flex;
+    margin-left: 400px;
+}
+
+/* FIN page editer profil by berthold*/
+
+/* Créer un Sujet */
+
+.contenu {
+    height: 30%;
+    padding-bottom: 170px;
+}
+
+.return {
+    background-color: rgba(145, 145, 145, 0.883);
+    border-color: grey;
+    color: white;
+}
+
+.return:hover {
+    background-color: rgba(107, 107, 107, 0.952);
+    border-color: grey;
+    color: white;
+}
+
+.return:link {
+    background-color: rgba(107, 107, 107, 0.952);
+    border-color: grey;
+}
+
+/* Positionnement du compteur de nombre de caractères par Geoffrey le 5mars 2020
+counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
+#counterGeo {
+    color: #757595;
+    position: relative;
+    bottom: 30px;
+    left: 95%;
+}
+
+#counterGeo2 {
+    color: #757595;
+    position: relative;
+    bottom: 30px;
+    left: 95%;
+}
+
+/* topic delete by berthold */
+.delete_topic {
+    color: black;
+}
+
+/* positionnement avatar */
+.avatar {
+    position: absolute;
+    left: 140px;
+    bottom: 10px;
+}
+
+.list-group-item {
+    height: 100px;
+}
+
+.board {
+    position: relative;
+    top: 20px;
+}
+
+/* Positionnement message topic index /
+.messageTopicGeo {
+position: relative;
+top: 25px;
+}
+.date {
+position: relative;
+top: 25px;
+}
+/ Gestion design par Geoffrey */
+
+.active {
+    border: 1px solid black;
+}
+
+.home {
+    padding: 10px;
+}
+
+.head-btn {
+    color: white;
+    border: none;
+    position: relative;
+    left: 900px;
+
+}
+
+.card {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* end topic delete by bertholdsdsssdsd */

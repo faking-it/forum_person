@@ -1,13 +1,13 @@
 <?php
 
-$host   = "mysql";
-$user   = "root";
-$pass   = "root";
-$dbname = "person";
+$host   = "g4yltwdo6z0izlm6.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+$user   = "bmrdiz3f0jm6kh4g";
+$pass   = "k6kuc4z9jkjal81t";
+$dbname = "p92u6s9jlpuzov62";
 
 $dsn = "mysql:host=$host;dbname=$dbname";
 
-$options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
+$options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4");
 
 try {
     $link= new \PDO($dsn, $user, $pass, $options);
@@ -23,6 +23,7 @@ $tables = array(
     "topics",
     "comments");
 
+<<<<<<< HEAD:src/pdo.php
 /*foreach($tables as $table){
     
 
@@ -38,3 +39,5 @@ $tables = array(
 
 //Fin
 
+=======
+>>>>>>> d92de0f60e6d49d29171caafaa7c5b55b699b2e9:pdo.php
