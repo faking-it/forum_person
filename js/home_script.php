@@ -89,6 +89,11 @@ foreach ($boards as $board)  {?>
                 document.getElementsByClassName("id_topic <?php echo $board->board_name?>")[j].style.display = "none";}
         <?php $i++; } ?>
            
+        if ("<?php echo $k;?>" == "Random"){
+            console.log("merde");
+        }
+        else {
+
             // Afficher MAX 3 topics par onglet.
             if (cpt_<?php echo $tab_cptr[$nom_cptr]?>>3){for (j=0;j<3;j++){
                 document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
@@ -154,8 +159,6 @@ foreach ($boards as $board)  {?>
                 }
                 );
 
-        if ("<?php echo $k;?>" == "Random"){
-            console.log("merde");
         }
 
         // Changer l'emplacement du contour bleu en fonction de l'onglet sélectionné
