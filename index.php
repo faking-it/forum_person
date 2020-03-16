@@ -17,7 +17,7 @@ require PATH."header.php";
    <nav class="home">
         <ul class="nav nav-pills nav-fill">
         <li class="nav-item All">
-            <a class="nav-link active" href="#">All<l/a>
+            <a class="nav-link active" href="#">All</a>
         </li>
         <li class="nav-item gen">
             <a class="nav-link" href="#">General</a>
