@@ -17,7 +17,7 @@ require PATH."header.php";
    <nav class="home">
         <ul class="nav nav-pills nav-fill">
         <li class="nav-item All">
-            <a class="nav-link active" href="#">All</a>
+            <a class="nav-link active" href="#">All<l/a>
         </li>
         <li class="nav-item gen">
             <a class="nav-link" href="#">General</a>
@@ -30,6 +30,12 @@ require PATH."header.php";
         </li>
         <li class="nav-item ev">
             <a class="nav-link" href="#">Events</a>
+        </li>
+        <li class="nav-item ev">
+            <a class="nav-link" href="#">Random</a>
+        </li>
+        <li class="nav-item ev">
+            <a class="nav-link" href="#">Very Secret</a>
         </li>
         </ul>
     </nav>

@@ -1,7 +1,7 @@
 <script type="text/javascript">
 
 // Création d'une variable cpt_ pour chaque catégorie
-<?php $i=0; $tab_cptr = array('gen','dvlpt','st','ev');
+<?php $i=0; $tab_cptr = array('gen','dvlpt','st','ev','rdm','vs');
 foreach ($boards as $board)  {?>
     let cpt_<?php echo $tab_cptr[$i]?> = document.getElementsByClassName("id_topic <?php echo $board->board_name?>").length;
 <?php $i++; } ?>
