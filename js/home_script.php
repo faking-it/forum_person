@@ -246,7 +246,7 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
     );
 
     // Changer l'emplacement du contour bleu en fonction de l'onglet sélectionné
-    for(j=5;j<=9;j++){
+    for(j=5;j<=11;j++){
     document.getElementsByClassName("nav-link")[j].className="nav-link";
     }
     document.getElementsByClassName("nav-link")[5].className="nav-link active";
