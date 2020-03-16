@@ -80,7 +80,7 @@ foreach ($boards as $board)  {?>
     );
 
 // Cette partie concerne les onblets: General, Development, Small Talks, Events.
-<?php $nom_onglet=0;$num_onglet=6;$nom_cptr=0; for ($var=6;$var<9;$var++){ $k=$board->board_name?>
+<?php $nom_onglet=0;$num_onglet=6;$nom_cptr=0; for ($var=6;$var<10;$var++){ $k=$board->board_name?>
 
     document.getElementsByClassName("nav-item")[$var].addEventListener("click", () => {
     
