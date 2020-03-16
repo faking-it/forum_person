@@ -31,12 +31,12 @@ require PATH."header.php";
         <li class="nav-item ev">
             <a class="nav-link" href="#">Events</a>
         </li>
-        <li class="nav-item rdm">
+        <!-- <li class="nav-item rdm">
             <a class="nav-link" href="#">Random</a>
         </li>
         <li class="nav-item vs">
             <a class="nav-link" href="#">Top Secret</a>
-        </li>
+        </li> -->
         </ul>
     </nav>
 
