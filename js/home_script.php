@@ -88,11 +88,6 @@ foreach ($boards as $board)  {?>
             for (j=0;j<cpt_<?php echo $tab_cptr[$i]?>;j++){
                 document.getElementsByClassName("id_topic <?php echo $board->board_name?>")[j].style.display = "none";}
         <?php $i++; } ?>
-
-        if (<?php echo $k?> == "Random"){
-
-        }
-        else {
            
             // Afficher MAX 3 topics par onglet.
             if (cpt_<?php echo $tab_cptr[$nom_cptr]?>>3){for (j=0;j<3;j++){
@@ -158,8 +153,6 @@ foreach ($boards as $board)  {?>
                     })
                 }
                 );
-
-        }
 
         // Changer l'emplacement du contour bleu en fonction de l'onglet sélectionné
         for(l=5;l<=11;l++){
