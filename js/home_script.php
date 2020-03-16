@@ -79,7 +79,7 @@ foreach ($boards as $board)  {?>
     }
     );
 
-// Cette partie concerne les onblets: General, Development, Small Talks, Events.
+// Cette partie concerne les onblets: General, Development, Small Talks, Events, Random et Top Secret.
 <?php $nom_onglet=0;$num_onglet=6;$nom_cptr=0; foreach ($boards as $board){ $k=$board->board_name?>
 
     document.getElementsByClassName("<?php echo $tab_cptr[$nom_onglet]?>")[0].addEventListener("click", () => {
@@ -100,8 +100,16 @@ foreach ($boards as $board)  {?>
         //Si l'onglet RANDOM est sélectionné
         if ("<?php echo $k;?>" == "Random"){
             
-            for (j=0;j<cpt_rdm;j++){
-                document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
+            if (cpt_rdm>5){
+                for (j=0;j<5;j++){
+                    document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
+                }
+                
+            }
+            else {
+                for (j=0;j<cpt_rdm;j++){
+                    document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
+                }
             }
 
         }
