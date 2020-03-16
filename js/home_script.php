@@ -89,7 +89,7 @@ foreach ($boards as $board)  {?>
                 document.getElementsByClassName("id_topic <?php echo $board->board_name?>")[j].style.display = "none";}
         <?php $i++; } ?>
 
-        if (<?php echo $k?> == "Random"){
+        if (<?php echo $k?> == "rdm"){
 
         }
         else {
