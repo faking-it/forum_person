@@ -264,7 +264,7 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
 
 
 // Cette partie concerne uniquement l'onglet Random.
-document.getElementsByClassName("rdm")[0].addEventListener("click", () => {
+/* document.getElementsByClassName("rdm")[0].addEventListener("click", () => {
 
     // Effacer les articles
     <?php $i=0; foreach ($boards as $board) {?>
