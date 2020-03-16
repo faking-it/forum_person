@@ -261,35 +261,4 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
 
 })
 
-
-
-// Cette partie concerne uniquement l'onglet Random.
-/* document.getElementsByClassName("rdm")[0].addEventListener("click", () => {
-
-    // Effacer les articles
-    <?php $i=0; foreach ($boards as $board) {?>
-            for (j=0;j<cpt_<?php echo $tab_cptr[$i]?>;j++){
-                document.getElementsByClassName("id_topic <?php echo $board->board_name?>")[j].style.display = "none";}
-        <?php $i++; } ?>
-
-    // Effacer les numéros de page
-            let pages2=document.getElementsByClassName("btn-group");
-
-            while (document.getElementsByClassName("btn-toolbar")[0].firstChild){
-                document.getElementsByClassName("btn-toolbar")[0].removeChild(document.getElementsByClassName("btn-toolbar")[0].lastChild);
-            }
-            
-    // Afficher MAX 5 topics.
-    for (j=0;j<cpt_<?php echo $tab_cptr[$4];?>;j++){
-            document.getElementsByClassName("id_topic Random")[j].style.display = "block";
-        }
-    
-    // Changer l'emplacement du contour bleu en fonction de l'onglet sélectionné
-    for(j=5;j<=11;j++){
-    document.getElementsByClassName("nav-link")[j].className="nav-link";
-    }
-    document.getElementsByClassName("nav-link")[10].className="nav-link active";
-
-})
-
 </script>
