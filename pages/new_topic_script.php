@@ -12,7 +12,7 @@ $sql = "INSERT INTO topics(title, content, user_id, board_id) VALUES ('$titre','
     
     
 
-  header('Location: http://192.168.99.100/index.php'); 
+  header('Location: ../index.php'); 
   // Après avoir executer la requete, nous redirigeons l'utilisateur vers la page précédente!
   
 
