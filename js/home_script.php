@@ -90,7 +90,7 @@ foreach ($boards as $board)  {?>
         <?php $i++; } ?>
 
         if (<?php echo $k?> == "rdm"){
-
+        console.log("<?php echo $k?>");
         }
         else {
            
