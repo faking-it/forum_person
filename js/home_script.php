@@ -154,7 +154,7 @@ foreach ($boards as $board)  {?>
                 }
                 );
 
-        if (<?php echo $k;?> == "rdm"){
+        if ("<?php echo $k;?>" == "rdm"){
             console.log("merde");
         }
 
