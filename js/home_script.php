@@ -155,7 +155,7 @@ foreach ($boards as $board)  {?>
             );
 
         // Changer l'emplacement du contour bleu en fonction de l'onglet sélectionné
-        for(l=5;l<=9;l++){
+        for(l=5;l<=11;l++){
         document.getElementsByClassName("nav-link")[l].className="nav-link";
         }
         document.getElementsByClassName("nav-link")[<?php echo $num_onglet ?>].className="nav-link active";
