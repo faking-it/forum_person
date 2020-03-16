@@ -273,9 +273,9 @@ document.getElementsByClassName("rdm")[0].addEventListener("click", () => {
             }
             
     // Afficher MAX 5 topics.
-    for (j=0;j<cpt_<?php echo $tab_cptr[$4]?>;j++){
+    for (j=0;j<cpt_<?php echo $tab_cptr[$4];?>;j++){
             document.getElementsByClassName("id_topic Random")[j].style.display = "block";
-        }}
+        }
     
     // Changer l'emplacement du contour bleu en fonction de l'onglet sélectionné
     for(j=5;j<=11;j++){
