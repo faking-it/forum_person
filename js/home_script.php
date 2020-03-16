@@ -90,7 +90,11 @@ foreach ($boards as $board)  {?>
         <?php $i++; } ?>
            
         if ("<?php echo $k;?>" == "Random"){
-            console.log("merde");
+            
+            for (j=0;j<cpt_rdm;j++){
+                document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
+            }
+
         }
         else {
 
