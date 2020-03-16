@@ -62,6 +62,8 @@ require "../pdo.php";
                     <option value="2" >Développement</option>
                     <option value="3" >Discussions</option>
                     <option value="4" >Evénements</option>
+                    <option value="5" >Random</option>
+                    <option value="6" >Top Secret</option>
                 </select>
                 </div>
                 

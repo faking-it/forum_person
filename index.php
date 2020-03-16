@@ -35,7 +35,7 @@ require PATH."header.php";
             <a class="nav-link" href="#">Random</a>
         </li>
         <li class="nav-item vs">
-            <a class="nav-link" href="#">Very Secret</a>
+            <a class="nav-link" href="#">Top Secret</a>
         </li>
         </ul>
     </nav>
