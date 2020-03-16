@@ -154,6 +154,10 @@ foreach ($boards as $board)  {?>
                 }
                 );
 
+        if (<?php echo $k;?> == "rdm"){
+            console.log("merde");
+        }
+
         // Changer l'emplacement du contour bleu en fonction de l'onglet sélectionné
         for(l=5;l<=11;l++){
         document.getElementsByClassName("nav-link")[l].className="nav-link";
