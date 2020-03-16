@@ -84,11 +84,20 @@ foreach ($boards as $board)  {?>
 
     document.getElementsByClassName("<?php echo $tab_cptr[$nom_onglet]?>")[0].addEventListener("click", () => {
     
+        //Cacher tous les articles
         <?php $i=0; foreach ($boards as $board) {?>
             for (j=0;j<cpt_<?php echo $tab_cptr[$i]?>;j++){
                 document.getElementsByClassName("id_topic <?php echo $board->board_name?>")[j].style.display = "none";}
         <?php $i++; } ?>
-           
+
+        // Effacer les numéros de page
+        let pages2=document.getElementsByClassName("btn-group");
+
+        while (document.getElementsByClassName("btn-toolbar")[0].firstChild){
+            document.getElementsByClassName("btn-toolbar")[0].removeChild(document.getElementsByClassName("btn-toolbar")[0].lastChild);
+        }
+
+        //Si l'onglet RANDOM est sélectionné
         if ("<?php echo $k;?>" == "Random"){
             
             for (j=0;j<cpt_rdm;j++){
@@ -96,6 +105,7 @@ foreach ($boards as $board)  {?>
             }
 
         }
+        //Si un des onglets restants est sélectionné
         else {
 
             // Afficher MAX 3 topics par onglet.
@@ -107,13 +117,6 @@ foreach ($boards as $board)  {?>
             }}
 
             // Pagination
-
-                // Effacer les numéros de page
-                let pages2=document.getElementsByClassName("btn-group");
-
-                while (document.getElementsByClassName("btn-toolbar")[0].firstChild){
-                    document.getElementsByClassName("btn-toolbar")[0].removeChild(document.getElementsByClassName("btn-toolbar")[0].lastChild);
-                }
 
                 // Afficher les numéros de page
                 c = cpt_<?php echo $tab_cptr[$nom_cptr]?>/3;
