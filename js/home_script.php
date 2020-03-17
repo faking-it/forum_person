@@ -205,7 +205,13 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
 
     // Effacer les articles en trop de l'onglet Random
 
-    
+    if (cpt_rdm>5){
+        <?php 
+        for ($j=5;$j<?>cpt_rdm;<?php;$j++){
+            ?>console.log("ok");<?php
+        }
+        ?>
+    }
             
     // Afficher les numéros de page
     for (i=0;i< <?php echo ($nbr_lignes/5);?>;i++){
