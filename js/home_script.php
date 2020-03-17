@@ -206,7 +206,10 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
     // Effacer les articles en trop de l'onglet Random
 
     <?php
-    $xpath = new DomXPath();
+    $page = file_get_contents('../index.php');
+    $doc = new DOMDocument();
+    $doc->loadHTML($page); 
+    $xpath = new DomXPath($doc);
 
     $nodeList = $xpath->query("//div[@class='id_topic Random']");
     $node = $nodeList->item(0);
