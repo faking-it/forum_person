@@ -16,13 +16,15 @@ foreach ($boards as $board)  {?>
     }
 
     if ($topics_rdm>5){
-        $sql_delete = "DELETE FROM topics WHERE board_id = 5 ORDER BY date_crea ASC LIMIT 1";
-        $sth = $link->prepare($sql_delete);
-        $sth->execute();
-        $topics = $sth->fetchAll(PDO::FETCH_OBJ);
+        for ($j=5;$j<$topics_rdm;$j++){
+            $sql_delete = "DELETE FROM topics WHERE board_id = 5 ORDER BY date_crea ASC LIMIT 1";
+            $sth = $link->prepare($sql_delete);
+            $sth->execute();
+            $topics = $sth->fetchAll(PDO::FETCH_OBJ);
+        }
     }
     ?>
-    
+
 // Pagination
 
     // ALL
