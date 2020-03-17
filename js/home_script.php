@@ -211,11 +211,9 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
             $topics_rdm++;
         }
     }
-    echo $topics_rdm;
+
     if ($topics_rdm>5){
-        for ($j=5;$j<$topics_rdm;$j++){
-            echo $j;
-        }
+        $sql_delete = ("DELETE * FROM topics WHERE board_id=5 EXCEPT SELECT TOP 5 * FROM topics WHERE board_id=5;"); 
     }
     ?>
             
