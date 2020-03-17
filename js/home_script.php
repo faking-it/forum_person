@@ -104,7 +104,7 @@ foreach ($boards as $board)  {?>
                 for (j=0;j<5;j++){
                     document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
                 }
-                
+                //Il reste encore à écrire la requête sql permettant de supprimer les topics au-delà des 5 derniers de la catégorie Random.
             }
             else {
                 for (j=0;j<cpt_rdm;j++){
@@ -202,6 +202,16 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
             while (document.getElementsByClassName("btn-toolbar")[0].firstChild){
                 document.getElementsByClassName("btn-toolbar")[0].removeChild(document.getElementsByClassName("btn-toolbar")[0].lastChild);
             }
+
+    // Effacer les articles en trop de l'onglet Random
+
+    if (cpt_rdm>5){
+        <?php 
+        for ($j=5;$j<?>cpt_rdm<?php;$j++){
+            ?>console.log("ok")<?php
+        }
+        ?>
+    }
             
     // Afficher les numéros de page
     for (i=0;i< <?php echo ($nbr_lignes/5);?>;i++){
