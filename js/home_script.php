@@ -207,7 +207,7 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
 
     <?php
     $topics_rdm = "SELECT * FROM topics WHERE board_id = 5;";
-    printf($topics_rdm);
+    echo($topics_rdm);
     ?>
             
     // Afficher les numéros de page
