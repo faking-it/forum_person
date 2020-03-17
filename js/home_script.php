@@ -205,7 +205,6 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
     }
 
     if ($topics_rdm>5){
-        $sth = $link->prepare($sql_delete);
         $sth->execute();
         $topics = $sth->fetchAll(PDO::FETCH_OBJ);
     }

@@ -26,3 +26,5 @@ FROM boards";
 
 
 $sql_delete = "DELETE * FROM topics WHERE board_id=5 EXCEPT SELECT TOP 5 * FROM topics WHERE board_id=5";
+
+    $sth = $link->prepare($sql_delete);
