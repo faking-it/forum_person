@@ -207,7 +207,7 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
 
     <?php
     $doc = new DOMDocument();
-    $doc->load("../index.php"); 
+    $doc->load("./index.php"); 
     $xpath = new DomXPath($doc);
 
     $nodeList = $xpath->query("//div[@class='id_topic Random']");
