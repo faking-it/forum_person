@@ -205,9 +205,9 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
     }
 
     if ($topics_rdm>5){
-        $demerde = "DELETE * FROM topics WHERE board_id=5 EXCEPT SELECT TOP 5 * FROM topics WHERE board_id=5;";
-        $putain = $link->prepare($demerde);
-        $putain->execute();
+        $sth = $link->prepare($sql_delete);
+        $sth->execute();
+        $topics = $sth->fetchAll(PDO::FETCH_OBJ);
     }
     ?>
             
