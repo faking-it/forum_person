@@ -23,4 +23,3 @@ $tables = array(
     "topics",
     "comments");
 
-?>
