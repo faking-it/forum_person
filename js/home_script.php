@@ -212,8 +212,9 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
 
     $nodeList = $xpath->query("//div[@class='id_topic Random']");
     $node = $nodeList->item(0);
+    $id_topic = $_GET["id_topic"];
 
-    ?>console.log("ok "<?php echo $node?>);
+    ?>console.log("ok "<?php echo $id_topic?>);
             
     // Afficher les numéros de page
     for (i=0;i< <?php echo ($nbr_lignes/5);?>;i++){
