@@ -6,6 +6,25 @@ foreach ($boards as $board)  {?>
     let cpt_<?php echo $tab_cptr[$i]?> = document.getElementsByClassName("id_topic <?php echo $board->board_name?>").length;
 <?php $i++; } ?>
 
+// Effacer les articles en trop de l'onglet Random
+
+<?php
+            foreach ($topics as $topic){
+                if ($topic->board_id == 5){
+                    $topics_rdm++;
+                }
+            }
+
+            if ($topics_rdm>5){
+                for ($j=5;$j<$topics_rdm;$j++){
+                    $sql_delete = "DELETE FROM topics WHERE board_id = 5 ORDER BY date_crea ASC LIMIT 1";
+                    $sth = $link->prepare($sql_delete);
+                    $sth->execute();
+                    $topics = $sth->fetchAll(PDO::FETCH_OBJ);
+                }
+            }
+            ?>
+
 // Pagination
 
     // ALL
@@ -99,25 +118,6 @@ foreach ($boards as $board)  {?>
 
         //Si l'onglet RANDOM est sélectionné
         if ("<?php echo $k;?>" == "Random"){
-
-            // Effacer les articles en trop de l'onglet Random
-
-            <?php
-            foreach ($topics as $topic){
-                if ($topic->board_id == 5){
-                    $topics_rdm++;
-                }
-            }
-
-            if ($topics_rdm>5){
-                for ($j=5;$j<$topics_rdm;$j++){
-                    $sql_delete = "DELETE FROM topics WHERE board_id = 5 ORDER BY date_crea ASC LIMIT 1";
-                    $sth = $link->prepare($sql_delete);
-                    $sth->execute();
-                    $topics = $sth->fetchAll(PDO::FETCH_OBJ);
-                }
-            }
-            ?>
             
             for (j=0;j<cpt_rdm;j++){
                 document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
