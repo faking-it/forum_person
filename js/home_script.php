@@ -205,10 +205,7 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
 
     // Effacer les articles en trop de l'onglet Random
 
-    <?php
-    $topics_rdm = "SELECT * FROM topics WHERE board_id = 5;";
-    echo($topics_rdm);
-    ?>
+    
             
     // Afficher les numéros de page
     for (i=0;i< <?php echo ($nbr_lignes/5);?>;i++){
