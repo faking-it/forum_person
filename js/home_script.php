@@ -205,7 +205,15 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
 
     // Effacer les articles en trop de l'onglet Random
 
+    <?php
+    $xpath = new DomXPath();
+
+    $nodeList = $xpath->query("//div[@class='id_topic Random']");
+    $node = $nodeList->item(0);
     
+    // To check the result:
+    echo "<p>" . $node->nodeValue . "</p>";
+    ?>
             
     // Afficher les numéros de page
     for (i=0;i< <?php echo ($nbr_lignes/5);?>;i++){
