@@ -205,7 +205,7 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
     }
 
     if ($topics_rdm>5){
-        $sql_delete = ("DELETE * FROM topics WHERE board_id=5 EXCEPT SELECT TOP 5 * FROM topics WHERE board_id=5;");
+        $sql_delete = ("DELETE FROM topics WHERE boards_id = 5 ORDER BY created_at ASC LIMIT 1;");
         $sth = $link->prepare($sql_delete);
         $sth->execute();
     }
