@@ -206,6 +206,7 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
     // Effacer les articles en trop de l'onglet Random
 
     <?php
+    require "../pdo.php";
     $topics_rdm = "SELECT * FROM topics WHERE board_id=1;";
     echo $topics_rdm;
     ?>
