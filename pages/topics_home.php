@@ -41,3 +41,4 @@ if ($topics_rdm>5){
         $topics = $sth->fetchAll(PDO::FETCH_OBJ);
     }
 }
+?>
