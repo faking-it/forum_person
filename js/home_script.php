@@ -205,7 +205,6 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
     }
 
     echo $topics_rdm;
-    echo $k;
 
     if ($topics_rdm>5){
         for ($j=0;$j<$topics_rdm;$j++){
