@@ -201,6 +201,7 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
     foreach ($topics as $topic){
         if ($topic->board_id == 5){
             $topics_rdm++;
+            echo $topics_rdm;
         }
     }
 
