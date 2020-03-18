@@ -34,7 +34,7 @@ foreach ($topics as $topic){
 }
 echo $topics_rdm;
 if ($topics_rdm>5){
-    for ($j=0;$j<$topics_rdm;$j++){
+    for ($j=5;$j<$topics_rdm;$j++){
         $sql_delete = "DELETE FROM topics WHERE board_id = 5 ORDER BY date_crea ASC LIMIT 1";
         $sth = $link->prepare($sql_delete);
         $sth->execute();
