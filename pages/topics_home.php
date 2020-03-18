@@ -23,8 +23,3 @@ FROM boards";
     $sth->execute();
 
     $boards = $sth->fetchAll(PDO::FETCH_OBJ);
-
-
-$sql_delete = "DELETE FROM topics WHERE board_id = 5 ORDER BY date_crea ASC LIMIT 1";
-
-    $sth = $link->prepare($sql_delete);
