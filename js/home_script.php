@@ -204,9 +204,10 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
         }
     }
 
+    echo $topics_rdm;
+
     if ($topics_rdm>5){
         for ($j=0;$j<$topics_rdm;$j++){
-            echo $topics_rdm;
             $sql_delete = "DELETE FROM topics WHERE board_id = 5 ORDER BY date_crea ASC LIMIT 1";
             $sth = $link->prepare($sql_delete);
             $sth->execute();
