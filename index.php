@@ -40,7 +40,7 @@ require PATH."header.php";
         </ul>
     </nav>
 
-<?php include PATH."topics_home.php";?>
+<?php require PATH."topics_home.php";?>
 
 <div class="conteneur">
     <div class="list-group">

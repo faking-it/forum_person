@@ -194,27 +194,7 @@ document.getElementsByClassName("All")[0].addEventListener("click", () => {
             while (document.getElementsByClassName("btn-toolbar")[0].firstChild){
                 document.getElementsByClassName("btn-toolbar")[0].removeChild(document.getElementsByClassName("btn-toolbar")[0].lastChild);
             }
-
-    // Effacer les articles en trop de l'onglet Random
-
-    </script> 
-    foreach ($topics as $topic){
-        if ($topic->board_id == 5){
-            $topics_rdm++;
-            echo $topics_rdm;
-        }
-    }
-    echo $topics_rdm;
-    if ($topics_rdm>5){
-        for ($j=0;$j<$topics_rdm;$j++){
-            $sql_delete = "DELETE FROM topics WHERE board_id = 5 ORDER BY date_crea ASC LIMIT 1";
-            $sth = $link->prepare($sql_delete);
-            $sth->execute();
-            $topics = $sth->fetchAll(PDO::FETCH_OBJ);
-        }
-    }
-    <script type="text/javascript">
-          
+            
     // Afficher les numéros de page
     for (i=0;i< <?php echo ($nbr_lignes/5);?>;i++){
         document.getElementsByClassName("btn-toolbar")[0].appendChild(document.createElement('div'));
