@@ -1,39 +1,88 @@
 <?php
-if (isset($_POST['send_comment'])) {
-     $user_id   =       intval($_POST['user_id']);
-     $topic_id  =       intval($_POST['topic_id']);
-     $comment   =       htmlspecialchars($_POST['comment']);
-       
-    #la condition if pour conditionner tous les parametres rentrés 'user_id' 'comment' 'comment2' 'password' 'password2'
-    if (!empty($_POST['user_id']) 
-    and !empty($_POST['comment']) 
-    and !empty($_POST['topic_id']) 
-    
-    ) {
-      
-        $sql_inst = "INSERT 
-        INTO comments(comment,user_id,topic_id)
-        VALUES (user_id=:user_id,comment=:comment, topic_id=:topic_id);";
+session_start();
+define("PATH", "./");
+require "../pdo.php";
+require PATH . "header.php";
+require_once "./parsedown-1.7.4/Parsedown.php";
+?>
+<div class="commentaire">
+<div class="form">
+    <h3>Ajouter un commentaire</h3>
+    <?php
+    if (isset($message)) {
+        echo "<font color='red'>" . $message . "</font>";
+    }
+    ?>
+    <form method="POST">
+        <!-- <label>Nouveau Commentaire</label>  --><br>
+        <div class="lead emoji-picker-container">
+            <input name="content" type="text" placeholder="Ajouter un commentaire" data-emojiable="true" 
+            data-emoji-input="unicode" /><br>
+            <input type="submit" name="send_comment" value="Ajouter un commentaire">
+        </div>
 
-        $stmnt = $link->prepare($sql_inst);
+    </form>
+</div>
+<!-- select commentaires -->
+<?php
+$topic_id   =   $topic_infos['id_topic'];
 
-        $stmnt->bindValue(':comment',           $comment,              PDO::PARAM_STR);
-        $stmnt->bindValue(':user_id',           $user_id,              PDO::PARAM_INT);
-        $stmnt->bindValue(':topic_id',          $$topic_id,            PDO::PARAM_INT);
-        $stmnt->execute();
+if (isset($_REQUEST["id_topic"])) {
+    $topic_id   =  intval($_REQUEST["id_topic"]);
+    $sql_com = "SELECT DISTINCT C.id_comment, C.content, C.date, U.pseudo
+        FROM comments AS C
+        INNER JOIN users AS U
+        ON C.user_id=U.id_user
+        INNER JOIN topics AS T 
+        ON T.id_topic=C.topic_id
+        WHERE T.id_topic=:id_topic
+        ORDER BY date DESC";
 
-        if ($stmnt && $stmnt->rowCount() > 0) {
-            $message = 'success';
-            $message = $user_id." votre commentaire a été bien ajouté .. merci!";
-            
-
-            } else {
-                $message = 'error 404';
-                $message = 'error sql';
-            }
-    
-
+    $req = $link->prepare($sql_com);
+    $req->bindValue(':id_topic',           $id_topic,              PDO::PARAM_INT);
+    $req->execute();
+    //var_dump($req->execute());
+    //$comment=$req->fetch();
+    //echo $comment['comment'] ;
+}
+?>
+<!-- deleted commentaire -->
+<?php
+if (isset($_REQUEST["id_comment"]) and $_SESSION["id"] != "") {
+    $id_comment   = intval($_REQUEST["id_comment"]);
+    $sql_delete = ("DELETE  
+            FROM comments
+            WHERE id_comment=?;");
+    $requete = $link->prepare($sql_delete);
+    //$requete->bindvalue(':id_topic', $id_topic, PDO::PARAM_INT);
+    $requete->execute(array($id_comment));
+    //var_dump($requete->execute());
+    if ($requete && $requete->rowCount() > 0) {
+        if (isset($_SESSION["id"])) {
+            echo  $message = 'le commentaire  n° ' . $id_comment . ' a été bien effacé';
+            //header('Location: http://localhost/index.php'); ;
+        }
     } else {
-        $message = "Ajouter un commentaire!";
+        //$message_del = 'error';
+        if (isset($_SESSION["id"])) {
+            //echo $message = 'erreur sql';
+            //header("Location:index.php");
+        }
     }
 }
+?>
+<h4>Liste des commentaires</h4>
+<div class="modal-header">
+                                    <h5 class="modal-title"> contenu :<?php 
+                                    //$Parsedown = new Parsedown();
+                                   /*  $content = $comment['content'];
+                                    $content= $Parsedown->text($content); */
+                                   // echo $content; 
+                                   echo "test".$comment["content"]; 
+                                   var_dump("test");?></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+</div>
+

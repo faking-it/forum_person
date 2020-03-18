@@ -15,16 +15,16 @@ monInput.addEventListener("input", () => {
     textTapper = monInput.value;
     nombreDeLettre = nombreDeLettre.length; // Nombre de caractères...
     document.getElementById("counterGeo").innerHTML = nombreDeLettre + "/40";
-    document.getElementById("counterGeo").style.color = "f89c0f";
+    document.getElementById("counterGeo").style.color = "#f89c0f";
   } else if (monInput.value.length <= 40) {
     let nombreDeLettre = monInput.value;
     textTapper = monInput.value;
     nombreDeLettre = nombreDeLettre.length; // Nombre de caractères...
     document.getElementById("counterGeo").innerHTML = nombreDeLettre + "/40";
-    document.getElementById("counterGeo").style.color = "ee262e";
+    document.getElementById("counterGeo").style.color = "#ee262e";
   } else {
     monInput.value = textTapper;
-    document.getElementById("counterGeo").style.color = "ee262e";
+    document.getElementById("counterGeo").style.color = "#ee262e";
   }
 });
 
@@ -45,16 +45,16 @@ monInput2.addEventListener("input", () => {
     textTapper2 = monInput2.value;
     nombreDeLettre = nombreDeLettre.length; // Nombre de caractères...
     document.getElementById("counterGeo2").innerHTML = nombreDeLettre + "/800";
-    document.getElementById("counterGeo2").style.color = "f89c0f";
+    document.getElementById("counterGeo2").style.color = "#f89c0f";
   } else if (monInput2.value.length <= 800) {
     let nombreDeLettre = monInput2.value;
     textTapper2 = monInput2.value;
     nombreDeLettre = nombreDeLettre.length; // Nombre de caractères...
     document.getElementById("counterGeo2").innerHTML = nombreDeLettre + "/800";
-    document.getElementById("counterGeo2").style.color = "ee262e";
+    document.getElementById("counterGeo2").style.color = "#ee262e";
   } else {
     monInput2.value = textTapper2;
-    document.getElementById("counterGeo2").style.color = "ee262e";
+    document.getElementById("counterGeo2").style.color = "#ee262e";
   }
 });
 

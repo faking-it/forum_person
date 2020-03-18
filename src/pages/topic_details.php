@@ -1,7 +1,7 @@
 <?php
 session_start();
 define("PATH", "./");
-include PATH . "header.php";
+require PATH . "header.php";
 require_once "./parsedown-1.7.4/Parsedown.php";
 ?>
 <?php
@@ -12,7 +12,7 @@ include "../pdo.php";
 if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_topic'] > 0) {
 
     $id_topic = $_GET['id_topic'];
-   
+
     //var_dump($id_topic);
 
     $sql2 = ("SELECT  id_topic, title, content, topics.date_crea , topics.date_up,  board_name AS categorie, users.id_user, pseudo
@@ -94,20 +94,13 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
             and !empty($comment)
 
         ) {
-
-
             $sql_inst = "INSERT INTO `comments` ( `content`, `user_id`, `topic_id`) 
                VALUES (? , ? , ?  );";
-
             $stmnt = $link->prepare($sql_inst);
             $stmnt->execute(array($comment, $user_id, $topic_id));
-            //var_dump($stmnt->execute());
             if ($stmnt && $stmnt->rowCount() == 1) {
-                // $message = 'success';
                 $message = "Votre commentaire a été bien ajouté .. merci!";
             } else {
-                /* var_dump($stmnt && $stmnt->rowCount());
-                    die;  */
                 $message = 'error 404';
                 $message = 'Problème de réseau, recommencer si le problème persiste veuiller contacter l\'équipe Person :hamilton 3.19';
             }
@@ -116,9 +109,6 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
         }
     }
 
-    /*  else{
-           echo $message = "debug isset";
-       } */
     ?>
 
     <div class="commentaire">
@@ -156,8 +146,7 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
             $req = $link->prepare($sql_com);
             $req->bindValue(':id_topic',           $id_topic,              PDO::PARAM_INT);
             $req->execute();
-            //var_dump($req->execute());
-            //$comment=$req->fetch();
+            
             //echo $comment['comment'] ;
         }
         ?>
@@ -188,38 +177,43 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
 
         ?>
     </div>
+
     <h4>Liste des commentaires</h4>
-    <ul class="">
-        <?php
-        $Parsedown = new Parsedown();
+    <div class="" >
+    
+        <ul class="">
+        <?php   
+               
         while ($comment = $req->fetch()) {
+            $Parsedown = new Parsedown();
             $content = $comment['content'];
-            //$content= $Parsedown->text($content); 
-        ?>
-            <li class="list-group-item">
-                <div class="left">
-                    <p> <?php echo $content = $Parsedown->text($content);  ?> </p>
-                    <p>
-                        <strong>Ecrit le : <?php echo $comment['date']; ?></strong> <br>
-                        <strong> Par : </strong><?php echo $comment['pseudo']; ?>
-                    </p>
-                </div>
-                <form method="post">
-                    <?php
-                    if (isset($message)) {
-                        //echo "<font color='red'>" . $message . "</font>";
-                    }
-                    ?>
-                    <a class="delete_topic">
-                        <button type="submit" name="id_comment" class="btn btn-outline-danger" value=<?php echo $comment['id_comment']; ?>>
-                            Effacer
-                        </button>
-                </form>
-            </li>
+                $content= $Parsedown->text($content);?> 
+               
+            <li class="">
+           <div>
+            <strong>Commentaire</strong> : <?php 
+            
+                //echo $comment["content"]; 
+                echo $content;
+                ?>
+           </div> 
+            <div>
+                <span> 
+                <strong>Ecrit par</strong> :<?php echo $comment["pseudo"];?> </span>
+        
+            </div>   
+             <div>
+                <a href="<?php echo $comment["pseudo"];?>" class="btn btn-primary">Editer</a>
+                <a href="<?php echo $comment["pseudo"];?>" class="btn btn-danger">Effacer</a> 
+           </div>
+          
+            </li> 
         <?php } ?>
-    </ul>
-    </nav>
+        </ul>
+    </div>
+    
 </div>
 
 <?php
-include PATH . "footer.php";
+require PATH . "footer.php";
+?>

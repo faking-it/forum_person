@@ -53,15 +53,21 @@ if (isset($_POST['send_inscription'])) {
                              /*  var_dump($stmt1->rowCount());
                               die; */
                                 $res=$stmt1->fetch(PDO::FETCH_ASSOC);
-                                //var_dump($res["pseudo"] . "  " .$pseudo);
+                                var_dump($stmt1->rowCount());
                                 
-                                if($res["pseudo"]==$pseudo){
-                                  $message =  "le pseudo : ". $pseudo." existe déjà";
+                                if($res["pseudo"]==$pseudo and $res["mail"]!=$mail){
+                                  $message =  "Le pseudo : ". $pseudo." existe déjà!";
                                   
-                                }elseif($res["mail"]==$mail){
-                                  $message =  "mail existe déjà";
-                                }else{
-                                  $message =" le mail : ".$mail." et le pseudo : " .$pseudo." existent déjà !";
+                                }
+                                if($res["mail"]==$mail and $res["pseudo"]!=$pseudo){
+                                  $message = "Le mail : ". $mail." existe déjà!";
+                                  
+                                }
+                                // L'utilisateur n'est pas enregistré mais le message ne s'affiche pas!
+                                if($res["mail"]==$mail){
+                                  if($res["pseudo"]==$pseudo){
+                                    $message ="Le mail : ".$mail." et le pseudo : " .$pseudo." existent déjà!";
+                                  }
                                 }
 
                               /*   $message = "error";
