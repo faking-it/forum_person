@@ -99,11 +99,17 @@ foreach ($boards as $board)  {?>
 
         //Si l'onglet RANDOM est sélectionné
         if ("<?php echo $k;?>" == "Random"){
-            
+
+            if (cpt_rdm>5){
+                for (j=0;j<5;j++){
+                    document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
+                }
+            }
+            else {
                 for (j=0;j<cpt_rdm;j++){
                     document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
                 }
-
+            }
         }
         //Si un des onglets restants est sélectionné
         else {
