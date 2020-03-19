@@ -17,6 +17,7 @@ if (isset($_GET['id_user']) and $_GET["id_user"] != $_SESSION["id"]) {
     header("Location:connexion.php");
     die;
 } else {
+    
     var_dump("text ok " . $_SESSION["pseudo"]);
 
     if (isset($_GET['edit_profil'])) {
@@ -86,7 +87,41 @@ if (isset($_GET['id_user']) and $_GET["id_user"] != $_SESSION["id"]) {
         <h1>Editer votre profil : <?php if (isset($_SESSION["id"])) {
                                         echo $_SESSION["pseudo"];
                                     }; ?></h1>
-        <?php
+        
+
+<!-- Ajout de l'insertion d'image perso d'un utilisateur -->
+<!-- Nous reprenons les lien/mail dans avatar des utilisateurs! -->
+<?php 
+require "../pdo.php";
+$sql = ("SELECT avatar FROM users WHERE id_user =8");
+    $sth = $link->prepare($sql);
+    $sth->execute();
+    $topics = $sth->fetchAll(PDO::FETCH_OBJ);
+?>
+<div id="changementImageProfilG">
+<p> Votre image de profil actuelle : <?php 
+foreach ($topics as $topic)  {
+   $imageDeProfil= $topic->avatar; }?></p>
+   <!-- fin -->
+
+
+
+
+<?php if(preg_match("#../image_users/#",$imageDeProfil)){
+                            ?> <img src= <?php echo($imageDeProfil); ?> alt="avatar" class="imageProfilActuelG" height="100px" width="100px">  <?php
+                        }
+                        else{
+                           ?> <img src= "https://2.gravatar.com/avatar/<?php echo md5($imageDeProfil)."s=100&";?>" alt="avatar" class="imageProfilActuelG" height="100px" width="100px"> <?php
+                        }
+                        ?>
+                        
+        <form action="../js/upload.php" method="post" enctype="multipart/form-data" >
+    <h4 id="selectionImageUpload">Select image to upload:</h4>
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit" id="validerNouvelleImage">
+    </div>
+</form>
+<?php
         if (isset($message)) {
             echo "<font color='red'> . $message . '</font>'";
         }
@@ -107,8 +142,8 @@ if (isset($_GET['id_user']) and $_GET["id_user"] != $_SESSION["id"]) {
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Avatar</label>
-                    <input name="avatar" type="text" class="form-control" id="" placeholder="Avatar" value="<?php if (isset($avatar)) {
+                    <label for="exampleInputEmail1">Email Gravatar</label>
+                    <input name="avatar" type="email" class="form-control" id="" placeholder="Avatar" value="<?php if (isset($avatar)) {
                                                                                                                 echo $avatar;
                                                                                                             } ?>">
                 </div>
@@ -127,8 +162,11 @@ if (isset($_GET['id_user']) and $_GET["id_user"] != $_SESSION["id"]) {
                     <label for="exampleInputPassword1">Confirmation Password</label>
                     <input name="password2" type="password" class="form-control" id="exampleInputPassword1">
                 </div>
+                
 
                 <button type="submit" name="edit_profil" class="btn btn-primary">Submit</button>
+
+                
             </form>
         </div>
     <?php

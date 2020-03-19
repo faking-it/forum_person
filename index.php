@@ -58,7 +58,13 @@ require PATH."header.php";
                     <div>               
                         <!-- ajout de l'image gravatar des utilisateurs grâce à leur e-mail -->
                         <?php $avatar = trim($mail_Post[$parcour]); $parcour++;?>
-                        <img src= "https://2.gravatar.com/avatar/<?php echo md5($topic->avatar)."s=100&";?>" alt="avatar" class="avatar">
+                        <?php if(preg_match("#../image_users/#",$topic->avatar)){
+                            ?> <img src= <?php echo($topic->avatar); ?> alt="avatar" class="avatar" height="80px" width="80px">  <?php
+                        }
+                        else{
+                           ?> <img src= "https://2.gravatar.com/avatar/<?php echo md5($topic->avatar)."s=100&";?>" alt="avatar" class="avatar" height="80px" width="80px"> <?php
+                        }
+                        ?>
                     </div>
                     <div class="title"><h5 class="messageTopicGeo"><?php echo $topic->title?></h5></div>
                     <small class="date"><?php echo $topic->date_up?></small>

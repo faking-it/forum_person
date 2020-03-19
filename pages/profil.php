@@ -57,7 +57,13 @@ include PATH . "header.php";
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">
             
-            <img src="https://2.gravatar.com/avatar/<?php echo (md5($avatar));?>" class="card-img-top" alt="image de l'avatar">
+            <?php if(preg_match("#../image_users/#",$avatar)){
+                            ?> <img src= <?php echo($avatar); ?> alt="avatar" class="card-img-top2" height="100px" width="100px">  <?php
+                        }
+                        else{
+                           ?> <img src= "https://2.gravatar.com/avatar/<?php echo md5($avatar)."s=100&";?>" alt="avatar" class="card-img-top2" height="100px" width="100px"> <?php
+                        }
+                        ?>
             </li>
         </ol>
     </nav>
@@ -73,7 +79,11 @@ include PATH . "header.php";
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><strong>Pseudo : </strong><?php echo $pseudo; ?></li>
             <li class="breadcrumb-item active" aria-current="page"><strong>Signature : </strong><?php echo $signature ;?></li>
-        </ol>
+        <!-- </ol>if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" -->
+<!-- && $imageFileType != "gif" ) { -->
+    <!-- echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed."; -->
+    <!-- $uploadOk = 0; -->
+<!-- } -->
     </nav>
 
     <nav aria-label="breadcrumb">
