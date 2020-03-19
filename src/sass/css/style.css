@@ -54,6 +54,7 @@ body {
   width: 80%;
   margin: auto;
   margin-top: 5%;
+  padding-left: 200px;
   /* background-color: whitesmoke; */
 }
 
@@ -161,3 +162,23 @@ counterGeo = Le compteur du titre et counterGeo2 = le compteur du commentaire */
 }
 
 /* end topic delete by berthold */
+
+/* ajout commentaire by berthold */
+
+.ajout_comment{
+  width: 600px;
+}
+.pseudo{
+  float: left;
+}
+.bt-comment{
+  float: right;
+}
+
+.li_edit_comment{
+  width: 650px;
+  height: 250px;
+  background-color: rgb(217, 238, 197);
+  border-radius: 40%;
+  padding-top: 0px;
+}

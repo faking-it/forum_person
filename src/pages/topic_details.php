@@ -10,17 +10,13 @@ require_once "./parsedown-1.7.4/Parsedown.php";
 */
 include "../pdo.php";
 if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_topic'] > 0) {
-
     $id_topic = $_GET['id_topic'];
-
-    //var_dump($id_topic);
-
-    $sql2 = ("SELECT  id_topic, title, content, topics.date_crea , topics.date_up,  board_name AS categorie, users.id_user, pseudo
-        pseudo
-        FROM topics
-        INNER JOIN users ON users.id_user= topics.user_id
-        INNER JOIN boards ON topics.board_id = boards.id_board
-        WHERE id_topic=:id_topic;");
+    $sql2 = ("SELECT  id_topic, title, content, topics.date_crea , topics.date_up,  board_name 
+            AS categorie, users.id_user, pseudo
+            FROM topics
+            INNER JOIN users ON users.id_user= topics.user_id
+            INNER JOIN boards ON topics.board_id = boards.id_board
+            WHERE id_topic=:id_topic;");
     $requete = $link->prepare($sql2);
     $requete->bindvalue(':id_topic', $id_topic, PDO::PARAM_INT);
     $requete->execute();
@@ -30,16 +26,14 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
 
     if ($topic_infos == 1) {
         $topic_infos = $requete->fetch();
-        // var_dump($topic_infos);
-
-        //$message = " #bne requete# ";
     } else {
         $message = " #erreur sql info article# ";
     }
 } else {
     $message =  " id_topic doit être numeric et non vide";
-}
+} 
 ?>
+
 <div class="conteneur">
     <?php
     if (isset($message)) {
@@ -50,22 +44,14 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
     <div class="card text-white bg-primary mb-3" style="max-width: 600px;">
         <div class="card-header">Titre du topic :<?php echo $topic_infos['title']; ?> <br>
             Ecrit par <h4><?php echo $topic_infos['pseudo']; ?></h4> Le <?php echo $topic_infos['date_crea']; ?></div>
-        <div class="card-body">
-            <p class="card-text">Catégorie: <?php echo $topic_infos['categorie']; ?></p>
+            <div class="card-body">
+                <p class="card-text">Catégorie: <?php echo $topic_infos['categorie']; ?></p>
 
-            <h5 class="card-title"><?php
-
-                                    $Parsedown = new Parsedown();
-
-
-                                    $content = $topic_infos['content'];
-                                    $content = $Parsedown->text($content);
-
-                                    echo $topic_infos['content']; ?></h5>
-            <p class="card-text">Date de création du topic : <?php echo $topic_infos['date_crea']; ?></p>
-            <p class="card-text">Date de mise à jour : <?php echo $topic_infos['date_up']; ?></p>
-            <!-- <p class="card-text">Date de mise à jour : <?php echo $topic_infos['id_user']; ?></p>-->
-        </div>
+                <h5 class="card-title"><?php echo $topic_infos['content']; ?></h5>
+                <p class="card-text">Date de création du topic : <?php echo $topic_infos['date_crea']; ?></p>
+                <p class="card-text">Date de mise à jour : <?php echo $topic_infos['date_up']; ?></p>
+                <!-- <p class="card-text">Date de mise à jour : <?php echo $topic_infos['id_user']; ?></p>-->
+            </div>
         <div>
 
         </div>
@@ -80,13 +66,11 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
     if (isset($_POST['send_comment'])) {
         $user_id   =       intval($_POST['user_id']);
         $topic_id  =       intval($_POST['topic_id']);
-        $comment   =      htmlspecialchars($_POST['content']);
+        $comment   =       htmlspecialchars($_POST['content']);
 
         $user_id    =   $_SESSION["id"];
         $topic_id   =   $topic_infos['id_topic'];
-        /* var_dump($comment);
-            die; */
-
+     
         #la condition if pour conditionner tous les parametres rentrés 'user_id' 'comment' 'comment2' 'password' 'password2'
         if (
             !empty($user_id)
@@ -94,12 +78,13 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
             and !empty($comment)
 
         ) {
-            $sql_inst = "INSERT INTO `comments` ( `content`, `user_id`, `topic_id`) 
-               VALUES (? , ? , ?  );";
+            $sql_inst = "INSERT 
+                        INTO `comments` ( `content`, `user_id`, `topic_id`) 
+                        VALUES (? , ? , ? );";
             $stmnt = $link->prepare($sql_inst);
             $stmnt->execute(array($comment, $user_id, $topic_id));
             if ($stmnt && $stmnt->rowCount() == 1) {
-                $message = "Votre commentaire a été bien ajouté .. merci!";
+                $message = "Votre commentaire a été bien ajouté ... merci!";
             } else {
                 $message = 'error 404';
                 $message = 'Problème de réseau, recommencer si le problème persiste veuiller contacter l\'équipe Person :hamilton 3.19';
@@ -112,7 +97,7 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
     ?>
 
     <div class="commentaire">
-        <div class="form">
+        <div class="">
             <h3>Ajouter un commentaire</h3>
             <?php
             if (isset($message)) {
@@ -121,13 +106,35 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
             ?>
             <form method="POST">
                 <!-- <label>Nouveau Commentaire</label>  --><br>
-                <div class="lead emoji-picker-container">
-                    <input name="content" type="text" placeholder="Ajouter un commentaire" data-emojiable="true" data-emoji-input="unicode" /><br>
+                <div class="lead emoji-picker-container ajout_comment">
+                    <input name="content" type="text" placeholder="Ajouter un commentaire" 
+                    data-emojiable="true" data-emoji-input="unicode" /><br>
                     <input type="submit" name="send_comment" value="Ajouter un commentaire">
                 </div>
 
             </form>
         </div>
+        <!-- deleted commentaire -->
+        <?php
+        if (isset($_REQUEST["id_comments"]) and $_SESSION["id"] != "") {
+            $id_comment   = intval($_REQUEST["id_comments"]);
+            $sql_delete = ("UPDATE comments
+                            SET content ='deleted'
+                            WHERE id_comment=?;");
+            $requete = $link->prepare($sql_delete);
+            //$requete->bindvalue(':id_topic', $id_topic, PDO::PARAM_INT);
+            $requete->execute(array($id_comment));
+            //var_dump($requete->execute());
+            if ($requete && $requete->rowCount() > 0) {
+                if (isset($_SESSION["id"])) {
+                      $message = 'le commentaire  n° ' . $id_comment . ' a été bien effacé';
+                }
+            } else {
+                $message = 'erreur sql test';
+            }
+        }
+
+        ?>
         <!-- select commentaires -->
         <?php
         $topic_id   =   $topic_infos['id_topic'];
@@ -150,69 +157,69 @@ if (isset($_GET['id_topic']) and is_numeric($_GET['id_topic']) and $_GET['id_top
             //echo $comment['comment'] ;
         }
         ?>
-        <!-- deleted commentaire -->
-        <?php
-        if (isset($_REQUEST["id_comment"]) and $_SESSION["id"] != "") {
-            $id_comment   = intval($_REQUEST["id_comment"]);
-            $sql_delete = ("DELETE  
-                    FROM comments
-                    WHERE id_comment=?;");
-            $requete = $link->prepare($sql_delete);
-            //$requete->bindvalue(':id_topic', $id_topic, PDO::PARAM_INT);
-            $requete->execute(array($id_comment));
-            //var_dump($requete->execute());
-            if ($requete && $requete->rowCount() > 0) {
-                if (isset($_SESSION["id"])) {
-                    echo  $message = 'le commentaire  n° ' . $id_comment . ' a été bien effacé';
-                    //header('Location: http://localhost/index.php'); ;
-                }
-            } else {
-                //$message_del = 'error';
-                if (isset($_SESSION["id"])) {
-                    //echo $message = 'erreur sql';
-                    //header("Location:index.php");
-                }
-            }
-        }
-
-        ?>
-    </div>
+        
+        
+    </div> <br>
 
     <h4>Liste des commentaires</h4>
     <div class="" >
     
-        <ul class="">
-        <?php   
-               
-        while ($comment = $req->fetch()) {
-            $Parsedown = new Parsedown();
-            $content = $comment['content'];
+        <ul class="list-group">
+            <?php  while ($comment = $req->fetch()) {
+                $Parsedown = new Parsedown();
+                $content = $comment['content'];
                 $content= $Parsedown->text($content);?> 
                
-            <li class="">
-           <div>
-            <strong>Commentaire</strong> : <?php 
-            
-                //echo $comment["content"]; 
-                echo $content;
-                ?>
-           </div> 
-            <div>
-                <span> 
-                <strong>Ecrit par</strong> :<?php echo $comment["pseudo"];?> </span>
-        
-            </div>   
-             <div>
-                <a href="<?php echo $comment["pseudo"];?>" class="btn btn-primary">Editer</a>
-                <a href="<?php echo $comment["pseudo"];?>" class="btn btn-danger">Effacer</a> 
-           </div>
-          
+            <li class=" list-group-item d-flex justify-content-between align-items-center li_edit_comment">
+                <div><span class="badge badge-primary badge-pill"><?php  echo $content; ?></span></div> 
+                <div class="pseudo"> <br>
+                    <span> 
+                    <strong>Ecrit par</strong> : <?php echo $comment["pseudo"];?> </span>
+                </div>   
+
+                <div>
+                    <form method="post">
+                        <button type="submit" value="<?php echo $comment["id_comment"];?>" name="id_comments" class="<?php if($comment['content']=='deleted'){echo "";}else{echo "btn btn-danger";} ?>">
+                        <?php if($comment['content']=='deleted'){echo "";}else{echo "Effacer";} ?></button> 
+                        <button type="button"  name="comment_edit" class="<?php if($comment['content']=='deleted'){echo "";}else{echo "btn btn-primary";} ?>"
+                        data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <?php if($comment['content']=='deleted'){echo "";}else{echo "Editer";} ?></button> 
+                    </form> <!-- <a href="" class="btn btn-secondary">Répondre</a> -->
+                 </div>
+               
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                    <div class="commentaire">
+        <div class="">
+            <h3>Editer le Commentaire</h3>
+            <?php
+            if (isset($message_edit)) {
+                echo "<font color='red'>" . $message . "</font>";
+            }
+            ?>
+            <form method="POST">
+                <!-- <label>Nouveau Commentaire</label>  --><br>
+                <div class="lead emoji-picker-container ajout_comment">
+                    <input name="content" type="text" placeholder="Ajouter un commentaire" 
+                    data-emojiable="true" data-emoji-input="unicode" /><br>
+                    <input type="submit" name="form_edit_comment" value="Ajouter un commentaire">
+                </div>
+
+            </form>
+        </div> </div>
+                </div>
+                     
             </li> 
         <?php } ?>
         </ul>
     </div>
+
+    
+                     
     
 </div>
+
+
 
 <?php
 require PATH . "footer.php";

@@ -73,16 +73,16 @@ if (isset($_REQUEST["id_comment"]) and $_SESSION["id"] != "") {
 ?>
 <h4>Liste des commentaires</h4>
 <div class="modal-header">
-                                    <h5 class="modal-title"> contenu :<?php 
-                                    //$Parsedown = new Parsedown();
-                                   /*  $content = $comment['content'];
-                                    $content= $Parsedown->text($content); */
-                                   // echo $content; 
-                                   echo "test".$comment["content"]; 
-                                   var_dump("test");?></h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
+        <h5 class="modal-title"> contenu :<?php 
+        //$Parsedown = new Parsedown();
+        /*  $content = $comment['content'];
+        $content= $Parsedown->text($content); */
+        // echo $content; 
+        echo "test".$comment["content"]; 
+        var_dump("test");?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 </div>
 

@@ -6,7 +6,7 @@ require "header.php";
 * delete topic sur base de l'id topic
 */
 require "../pdo.php";
-if(isset($_REQUEST["id_comment"]) and $_SESSION["id"]!=""){
+if(isset($_REQUEST["id_commen"]) and $_SESSION["id"]!=""){
     $id_comment   = intval($_REQUEST["id_comment"])   ;
         $sql_delete = ("DELETE  
         FROM comments
