@@ -1,5 +1,5 @@
 <?php
-header('Location: ../pages/profil_edition.php');
+header('Location: pages/profil_edition.php');
  
 session_start();
 define("PATH", "./");
@@ -28,6 +28,7 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
     $uploadOk = 0;
 }
 // Allow certain file formats
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
