@@ -1,5 +1,5 @@
 <?php
-//header('Location: ../pages/profil_edition.php');
+header('Location: ../pages/profil_edition.php');
  
 session_start();
 define("PATH", "./");
