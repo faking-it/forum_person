@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-body {}
+body {
+}
 
 /* Barre de navigation à droite */
 
@@ -113,8 +114,9 @@ body {}
 
 /* page editer profil by berthold */
 .btn_editer_profil {
-  display: flex;
-  margin-left: 400px;
+  position: relative;
+  margin-top: 20px;
+  left: 35%;
 }
 
 /* FIN page editer profil by berthold*/
@@ -207,6 +209,36 @@ top: 25px;
 .card {
   margin-left: 10%;
   margin-right: 10%;
+}
+/* Modification image de profil utilisateur par Geoffrey le 18 mars*/
+.breadcrumb-item {
+  border: 0px solid black;
+}
+#changementImageProfilG {
+  border: 1px solid rgba(0, 0, 0, 0.151);
+  padding: 10px 10px 10px 10px;
+  height: 280px;
+  margin-bottom: 20px;
+}
+.imageProfilActuelG {
+  text-align: center;
+  border: 1px solid black;
+  position: relative;
+  left: 38%;
+  margin-bottom: 10px;
+}
+#selectionImageUpload {
+  position: relative;
+  left: 29%;
+}
+#fileToUpload {
+  position: relative;
+  left: 29%;
+}
+#validerNouvelleImage {
+  position: relative;
+  top: 40px;
+  right: 50px;
 }
 
 /* end topic delete by bertholdsd */
