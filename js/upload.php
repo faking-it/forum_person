@@ -1,7 +1,8 @@
 <?php
-header('Location: ../pages/profil_edition.php');
- 
 session_start();
+// enregistrer l'image dans la colone avatar!
+$idUser= $_SESSION["id"];
+header('Location: ../pages/profil_edition.php?id_user='.$idUser);
 define("PATH", "./");
 include( "../pdo.php");
 
