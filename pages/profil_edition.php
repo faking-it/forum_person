@@ -93,7 +93,8 @@ if (isset($_GET['id_user']) and $_GET["id_user"] != $_SESSION["id"]) {
 <!-- Nous reprenons les lien/mail dans avatar des utilisateurs! -->
 <?php 
 require "../pdo.php";
-$sql = ("SELECT avatar FROM users WHERE id_user=:id_user");
+$idUser=$_GET['id_user'];
+$sql = ("SELECT avatar FROM users WHERE id_user = '$idUser'");
     $sth = $link->prepare($sql);
     $sth->execute();
     $topics = $sth->fetchAll(PDO::FETCH_OBJ);
