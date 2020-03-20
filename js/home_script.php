@@ -114,7 +114,7 @@ foreach ($boards as $board)  {?>
         
         else if ("<?php echo $k;?>" == "Top Secret"){
             
-            let ulr_actuelle = window.location;
+            let ulr_actuelle = window.location.hash;
             console.log(ulr_actuelle);
 
         }
