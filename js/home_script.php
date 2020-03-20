@@ -111,6 +111,13 @@ foreach ($boards as $board)  {?>
                 }
             }
         }
+
+        //Si l'onglet RANDOM est sélectionné
+        if ("<?php echo $k;?>" == "Top Secret"){
+
+        let url_actuelle = window.location;
+        console.log(url_actuelle);
+
         //Si un des onglets restants est sélectionné
         else {
 
