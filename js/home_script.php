@@ -111,16 +111,16 @@ foreach ($boards as $board)  {?>
                 }
             }
         }
+        
+        else if ("<?php echo $k;?>" == "Top Secret"){
+            
+            let ulr_actuelle = window.location;
+            console.log(ulr_actuelle);
 
-        //Si l'onglet RANDOM est sélectionné
-        if ("<?php echo $k;?>" == "Top Secret"){
-
-        let url_actuelle = window.location;
-        console.log(url_actuelle);
+        }
 
         //Si un des onglets restants est sélectionné
         else {
-
             // Afficher MAX 3 topics par onglet.
             if (cpt_<?php echo $tab_cptr[$nom_cptr]?>>3){for (j=0;j<3;j++){
                 document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
