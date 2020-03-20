@@ -117,6 +117,10 @@ foreach ($boards as $board)  {?>
             let ulr_actuelle = window.location.hash;
             console.log(ulr_actuelle);
 
+            if (url_actuelle == 'vip'){
+                
+            }
+
         }
 
         //Si un des onglets restants est sélectionné
