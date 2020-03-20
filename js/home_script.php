@@ -117,7 +117,7 @@ foreach ($boards as $board)  {?>
             let url_actuelle = window.location.hash;
             console.log(url_actuelle);
 
-            if (url_actuelle == 'vip'){
+            if (url_actuelle == '#vip'){
 
                 if (cpt_<?php echo $tab_cptr[$nom_cptr]?>>3){for (j=0;j<3;j++){
                 document.getElementsByClassName("id_topic <?php echo $k?>")[j].style.display = "block";
